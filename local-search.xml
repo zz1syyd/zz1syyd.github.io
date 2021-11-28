@@ -4,16 +4,16 @@
   
   
   <entry>
-    <title>text2</title>
-    <link href="/others/text2/"/>
-    <url>/others/text2/</url>
+    <title>绿城杯</title>
+    <link href="/reverse/%E7%BB%BF%E5%9F%8E%E6%9D%AF/"/>
+    <url>/reverse/%E7%BB%BF%E5%9F%8E%E6%9D%AF/</url>
     
-    <content type="html"><![CDATA[<p>test</p>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>
       
-      <category>others</category>
+      <category>reverse</category>
       
     </categories>
     
@@ -23,16 +23,16 @@
   
   
   <entry>
-    <title>test</title>
-    <link href="/reverse/test/"/>
-    <url>/reverse/test/</url>
+    <title>demo</title>
+    <link href="/others/demo/"/>
+    <url>/others/demo/</url>
     
     <content type="html"><![CDATA[<p>test</p>]]></content>
     
     
     <categories>
       
-      <category>reverse</category>
+      <category>others</category>
       
     </categories>
     
