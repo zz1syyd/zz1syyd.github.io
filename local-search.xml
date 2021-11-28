@@ -5,8 +5,8 @@
   
   <entry>
     <title>test</title>
-    <link href="/test/"/>
-    <url>/test/</url>
+    <link href="/blogs/test/"/>
+    <url>/blogs/test/</url>
     
     <content type="html"><![CDATA[<p>test</p>]]></content>
     
