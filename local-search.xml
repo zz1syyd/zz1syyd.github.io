@@ -5,15 +5,15 @@
   
   <entry>
     <title>text2</title>
-    <link href="/other/text2/"/>
-    <url>/other/text2/</url>
+    <link href="/others/text2/"/>
+    <url>/others/text2/</url>
     
     <content type="html"><![CDATA[<p>test</p>]]></content>
     
     
     <categories>
       
-      <category>other</category>
+      <category>others</category>
       
     </categories>
     
