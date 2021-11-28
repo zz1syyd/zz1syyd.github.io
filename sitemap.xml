@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.zz1syyd.cn/2021/text2/</loc>
+    <loc>https://www.zz1syyd.cn/other/text2/</loc>
+    
+    <lastmod>2021-11-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zz1syyd.cn/reverse/test/</loc>
     
     <lastmod>2021-11-28</lastmod>
     
@@ -19,15 +28,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://www.zz1syyd.cn/2021/test/</loc>
-    
-    <lastmod>2021-11-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://www.zz1syyd.cn/</loc>
@@ -37,20 +37,20 @@
   </url>
 
   
-  <url>
-    <loc>https://www.zz1syyd.cn/tags/reverse/</loc>
-    <lastmod>2021-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.zz1syyd.cn/tags/%E6%9D%82/</loc>
-    <lastmod>2021-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
+  
+  <url>
+    <loc>https://www.zz1syyd.cn/categories/reverse/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zz1syyd.cn/categories/other/</loc>
+    <lastmod>2021-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>

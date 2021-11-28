@@ -5,18 +5,18 @@
   
   <entry>
     <title>text2</title>
-    <link href="/2021/text2/"/>
-    <url>/2021/text2/</url>
+    <link href="/other/text2/"/>
+    <url>/other/text2/</url>
     
     <content type="html"><![CDATA[<p>test</p>]]></content>
     
     
+    <categories>
+      
+      <category>other</category>
+      
+    </categories>
     
-    <tags>
-      
-      <tag>杂</tag>
-      
-    </tags>
     
   </entry>
   
@@ -24,18 +24,18 @@
   
   <entry>
     <title>test</title>
-    <link href="/2021/test/"/>
-    <url>/2021/test/</url>
+    <link href="/reverse/test/"/>
+    <url>/reverse/test/</url>
     
     <content type="html"><![CDATA[<p>test</p>]]></content>
     
     
+    <categories>
+      
+      <category>reverse</category>
+      
+    </categories>
     
-    <tags>
-      
-      <tag>reverse</tag>
-      
-    </tags>
     
   </entry>
   
