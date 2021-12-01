@@ -18,18 +18,28 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="书籍《汇编语言》——王爽《逆向实战分析》——冀云链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1HiS4pyHnpNdO8CpNo1ujEQ提取码：qpjt 《逆向工程核心原理》——[韩] 李承远链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1Q9hhZM33ZD4lb1z_Qcvncg提取码：fxfa 《有趣的二进制：软件安全与逆向分析》——[日] 爱甲健二链接：https:&#x2F;&#x2F;">
+  <meta name="description" content="一些汇总壳压缩壳：对软件进行压缩，使其体积减小；在软件被执行的时候进行解压缩，解压缩后与加壳前程序结构相同 加密壳：对软件进行保护，使其关键代码不被逆向或者不被破解；在软件被执行后或者执行时进行解密，解密后与加壳前程序结构可能不同 加密壳保护强度划分： PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布局与原来不同 虚拟指令壳：虚拟机的壳，将软件二进制代码中指令进行模拟，保护强度更高">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文章.工具.网页">
-<meta property="og:url" content="https://www.zz1syyd.com/others/%E6%96%87%E7%AB%A0.%E5%B7%A5%E5%85%B7.%E7%BD%91%E9%A1%B5/index.html">
+<meta property="og:title" content="知识-技巧">
+<meta property="og:url" content="https://www.zz1syyd.com/others/%E7%9F%A5%E8%AF%86-%E6%8A%80%E5%B7%A7/index.html">
 <meta property="og:site_name" content="冬云">
-<meta property="og:description" content="书籍《汇编语言》——王爽《逆向实战分析》——冀云链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1HiS4pyHnpNdO8CpNo1ujEQ提取码：qpjt 《逆向工程核心原理》——[韩] 李承远链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1Q9hhZM33ZD4lb1z_Qcvncg提取码：fxfa 《有趣的二进制：软件安全与逆向分析》——[日] 爱甲健二链接：https:&#x2F;&#x2F;">
+<meta property="og:description" content="一些汇总壳压缩壳：对软件进行压缩，使其体积减小；在软件被执行的时候进行解压缩，解压缩后与加壳前程序结构相同 加密壳：对软件进行保护，使其关键代码不被逆向或者不被破解；在软件被执行后或者执行时进行解密，解密后与加壳前程序结构可能不同 加密壳保护强度划分： PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布局与原来不同 虚拟指令壳：虚拟机的壳，将软件二进制代码中指令进行模拟，保护强度更高">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-28T13:30:02.000Z">
-<meta property="article:modified_time" content="2021-12-01T10:25:36.029Z">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-16383646743651.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-16383646743653.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-16383646743655.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-16383646743667.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-16383646743669.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-163836467436611.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-163836467436613.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-163836467436615.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img-163836467436617.png">
+<meta property="article:published_time" content="2021-11-28T13:30:05.000Z">
+<meta property="article:modified_time" content="2021-12-01T13:25:22.882Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:/Users/86191/blog/source/img-16383646743651.png">
   
-  <title>文章.工具.网页 - 冬云</title>
+  <title>知识-技巧 - 冬云</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -158,7 +168,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="文章.工具.网页">
+            <span class="h2" id="subtitle" title="知识-技巧">
               
             </span>
 
@@ -179,7 +189,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      525 字
+      1.5k 字
     </span>
   
 
@@ -188,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      5 分钟
     </span>
   
 
@@ -225,22 +235,92 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">文章.工具.网页</h1>
+            <h1 style="display: none">知识-技巧</h1>
             
             <div class="markdown-body">
-              <h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><h4 id="《汇编语言》——王爽"><a href="#《汇编语言》——王爽" class="headerlink" title="《汇编语言》——王爽"></a>《汇编语言》——王爽</h4><h4 id="《逆向实战分析》——冀云"><a href="#《逆向实战分析》——冀云" class="headerlink" title="《逆向实战分析》——冀云"></a>《逆向实战分析》——冀云</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1HiS4pyHnpNdO8CpNo1ujEQ">https://pan.baidu.com/s/1HiS4pyHnpNdO8CpNo1ujEQ</a><br>提取码：qpjt</p>
-<h4 id="《逆向工程核心原理》——-韩-李承远"><a href="#《逆向工程核心原理》——-韩-李承远" class="headerlink" title="《逆向工程核心原理》——[韩] 李承远"></a>《逆向工程核心原理》——[韩] 李承远</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Q9hhZM33ZD4lb1z_Qcvncg">https://pan.baidu.com/s/1Q9hhZM33ZD4lb1z_Qcvncg</a><br>提取码：fxfa</p>
-<h4 id="《有趣的二进制：软件安全与逆向分析》——-日-爱甲健二"><a href="#《有趣的二进制：软件安全与逆向分析》——-日-爱甲健二" class="headerlink" title="《有趣的二进制：软件安全与逆向分析》——[日] 爱甲健二"></a>《有趣的二进制：软件安全与逆向分析》——[日] 爱甲健二</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1l7GoVkhnAhKTcyOU-XHrVg">https://pan.baidu.com/s/1l7GoVkhnAhKTcyOU-XHrVg</a><br>提取码：bvik</p>
-<h4 id="《CTF特训营》"><a href="#《CTF特训营》" class="headerlink" title="《CTF特训营》"></a>《CTF特训营》</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1e_HxUmdhE-sR-eZCg-WmJw">https://pan.baidu.com/s/1e_HxUmdhE-sR-eZCg-WmJw</a><br>提取码：xw56</p>
+              <h2 id="一些汇总"><a href="#一些汇总" class="headerlink" title="一些汇总"></a>一些汇总</h2><h3 id="壳"><a href="#壳" class="headerlink" title="壳"></a><strong>壳</strong></h3><p>压缩壳：对软件进行压缩，使其体积减小；在软件被执行的时候进行解压缩，解压缩后与加壳前程序结构相同</p>
+<p>加密壳：对软件进行保护，使其关键代码不被逆向或者不被破解；在软件被执行后或者执行时进行解密，解密后与加壳前程序结构可能不同</p>
+<p>加密壳保护强度划分：</p>
+<p>PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布局与原来不同</p>
+<p>虚拟指令壳：虚拟机的壳，将软件二进制代码中指令进行模拟，保护强度更高</p>
 <hr>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>ALLTOOLS:</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1qOMJg1AmBKj5DMbX55I8fQ">https://pan.baidu.com/s/1qOMJg1AmBKj5DMbX55I8fQ</a><br>提取码 / 解压码：flag / hacktheworld</p>
-<p><a target="_blank" rel="noopener" href="https://down.52pojie.cn/Tools/Unpackers/">爱盘 - 最新的在线破解工具包 (52pojie.cn)</a></p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a><strong>寄存器</strong></h3><p>ECX寄存器：用于循环时的计数</p>
 <hr>
-<h3 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h3><p><a target="_blank" rel="noopener" href="https://www.somd5.com/">MD5免费在线解密破解_MD5在线加密-SOMD5</a></p>
-<p><a target="_blank" rel="noopener" href="https://ctf.bugku.com/tools.html">在线工具 - Bugku CTF</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bugku.com/thread-151-1-1.html">CTF中那些脑洞大开的编码和加密_CTF论坛 (bugku.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/dis.html">dis — Python 字节码反汇编器 — Python 3.7.12 文档</a></p>
+<h3 id="脱壳"><a href="#脱壳" class="headerlink" title="脱壳"></a><strong>脱壳</strong></h3><p>寻找OEP，即原始入口点（在加壳前的入口点）</p>
+<hr>
+<h3 id="dump-amp-反dump-amp-反反dump"><a href="#dump-amp-反dump-amp-反反dump" class="headerlink" title="dump &amp; 反dump &amp; 反反dump"></a><strong>dump &amp; 反dump &amp; 反反dump</strong></h3><hr>
+<h3 id="hook技术"><a href="#hook技术" class="headerlink" title="hook技术"></a><strong>hook技术</strong></h3><p>Hook技术无论对安全软件还是恶意软件都是十分关键的一项技术 其本质就是劫持函数调用 </p>
+<p>在程序中可以理解为“劫持”</p>
+<p>简单说hook技术就是在程序运行的时候经过几种技术手段来改变程序流程走向操做者指定的函数 常见的是在调用api函数时 会先运行操做者的函数 而后再进入到本来应该调用的函数上</p>
+<hr>
+<h3 id="TEA-amp-XTEA-amp-XXTEA加密"><a href="#TEA-amp-XTEA-amp-XXTEA加密" class="headerlink" title="TEA &amp; XTEA &amp; XXTEA加密"></a><strong>TEA &amp; XTEA &amp; XXTEA加密</strong></h3><p>xtea算法是tea算法的升级版 增加了更多密钥表 移位和异或操作</p>
+<p>xxtea算法是xtea算法的升级版 比之前两个要更复杂 也叫做Corrected Block TEA</p>
+<hr>
+<h3 id="PE文件"><a href="#PE文件" class="headerlink" title="PE文件"></a><strong>PE文件</strong></h3><hr>
+<h3 id="UPX"><a href="#UPX" class="headerlink" title="UPX"></a><strong>UPX</strong></h3><p>一种比较简单的压缩壳</p>
+<p>主要功能是压缩PE文件 如exe dll等文件</p>
+<hr>
+<h3 id="反调试-amp-反反调试"><a href="#反调试-amp-反反调试" class="headerlink" title="反调试 &amp; 反反调试"></a><strong>反调试 &amp; 反反调试</strong></h3><hr>
+<h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2><h3 id="1"><a href="#1" class="headerlink" title="1:"></a><strong>1:</strong></h3><p>当所需字符串过长时 可以去Hex View窗口查看数组开始地址以及结束地址</p>
+<p><img src="C:\Users\86191\blog\source\img-16383646743651.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="C:\Users\86191\blog\source\img-16383646743653.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<h3 id="2"><a href="#2" class="headerlink" title="2:"></a><strong>2:</strong></h3><p>.pyc文件使用在线反编译py软件</p>
+<p>.key文件为txt加密文件 将后缀改为.txt即可</p>
+<hr>
+<h3 id="3"><a href="#3" class="headerlink" title="3:"></a><strong>3:</strong></h3><p>CryptaCreateHash函数中  <strong>0x8004u</strong> 为标识符        此加密可用md5解决</p>
+<hr>
+<h3 id="4"><a href="#4" class="headerlink" title="4:"></a><strong>4:</strong></h3><p>MD5函数特征码</p>
+<p>= 1732584193        或者                  = 0x67452301</p>
+<p>= -271733879                                  = 0xefcdab89</p>
+<p>= -1732584194                                 = 0x98badcfe</p>
+<p>= 271733878                                    = 0x10325476</p>
+<hr>
+<h3 id="5"><a href="#5" class="headerlink" title="5:"></a><strong>5:</strong></h3><p>base64表:</p>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</p>
+<p>base58表:</p>
+<p>123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz</p>
+<hr>
+<h3 id="6"><a href="#6" class="headerlink" title="6:"></a><strong>6:</strong></h3><p>brainfuck代码由 &lt; &gt; [ ] + - , .八个符号组成</p>
+<p><img src="C:\Users\86191\blog\source\img-16383646743655.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>[ ]括号里面为for循环</p>
+<hr>
+<h3 id="7"><a href="#7" class="headerlink" title="7:"></a><strong>7:</strong></h3><p>TEA &amp; XTEA &amp; XXTEA加密特征码：</p>
+<p><strong>0x9e3779b9</strong>     或(和)     <strong>0x61c88647</strong></p>
+<hr>
+<h3 id="8"><a href="#8" class="headerlink" title="8:"></a><strong>8:</strong></h3><p>.NET文件使用dnSpy打开 编码方式为c#</p>
+<hr>
+<h3 id="9"><a href="#9" class="headerlink" title="9:"></a><strong>9:</strong></h3><p>__gmpz_init_set_str为 GNU 高精度算法库(GNU Multiple Precision Arithmetic Library)</p>
+<p>__gmpz_powm函数将计算 base 的 exp 次方，并对 mod 取模，最后将结果写入 rop 中</p>
+<p>且 <strong>65537</strong> 比较敏感</p>
+<p>所以可以确定为RSA加密算法</p>
+<p><img src="C:\Users\86191\blog\source\img-16383646743667.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<h3 id="10"><a href="#10" class="headerlink" title="10:"></a><strong>10:</strong></h3><p>打开python打包的exe文件：</p>
+<p><img src="C:\Users\86191\blog\source\img-16383646743669.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>首先使用命令（pyinstxtractor.py可自行下载）同一目录下</p>
+<blockquote>
+<p><strong>python pyinstxtractor.py attachment.exe</strong></p>
+</blockquote>
+<p>将exe文件解包</p>
+<p><img src="C:\Users\86191\blog\source\img-163836467436611.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>找到 <strong>login</strong>或者是<strong>main</strong> 和 <strong>struct</strong></p>
+<p>用winhex查看头部</p>
+<p>将login头部缺少信息用struct头部补充</p>
+<p>最后将login后缀改名.pyc</p>
+<hr>
+<h3 id="11"><a href="#11" class="headerlink" title="11:"></a><strong>11:</strong></h3><p>控制流平坦化：</p>
+<p>一段普通程序添加控制流平坦化后 效果如下图：</p>
+<p><img src="C:\Users\86191\blog\source\img-163836467436613.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>去除：（需要angr环境）</p>
+<p><img src="C:\Users\86191\blog\source\img-163836467436615.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p><strong>python3 deflat.py -f ./attachment –addr 0x400620</strong></p>
+</blockquote>
+<hr>
+<h3 id="12"><a href="#12" class="headerlink" title="12:"></a><strong>12:</strong></h3><p>AES加密模式-CBC判断</p>
+<p><img src="C:\Users\86191\blog\source\img-163836467436617.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
 
             </div>
             <hr>
@@ -271,6 +351,12 @@
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/others/%E6%96%87%E7%AB%A0-%E5%B7%A5%E5%85%B7-%E7%BD%91%E9%A1%B5/">
+                        <span class="hidden-mobile">文章-工具-网页</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
