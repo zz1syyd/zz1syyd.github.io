@@ -18,14 +18,34 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta property="og:type" content="article">
+  <meta name="description" content="time:2021-11-7  power题目说是arm汇编 用 Resource Hacker 打开 发现S盒  然后搜索找到main函数  发现第1253行  .size   ZN3aes14encryption_cbcEPcS0, .-ZN3aes14encryption_cbcEPcS0  aes 和 cbc 所以可以肯定是aes加密 是不是cbc模式难说 找到16位密钥  this_is">
+<meta property="og:type" content="article">
 <meta property="og:title" content="陇原战&#39;疫&#39;">
 <meta property="og:url" content="https://www.zz1syyd.com/reverse/%E9%99%87%E5%8E%9F%E6%88%98%E2%80%98%E7%96%AB%E2%80%99/index.html">
 <meta property="og:site_name" content="冬云">
+<meta property="og:description" content="time:2021-11-7  power题目说是arm汇编 用 Resource Hacker 打开 发现S盒  然后搜索找到main函数  发现第1253行  .size   ZN3aes14encryption_cbcEPcS0, .-ZN3aes14encryption_cbcEPcS0  aes 和 cbc 所以可以肯定是aes加密 是不是cbc模式难说 找到16位密钥  this_is">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383682581061.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383682581073.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383682984375.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383682984377.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383682984379.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843711.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843713.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843715.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843817.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843819.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843821.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836829843823.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836837201625.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836837201627.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836837201629.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836837201631.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836837201633.png">
 <meta property="article:published_time" content="2021-11-28T13:33:57.000Z">
-<meta property="article:modified_time" content="2021-11-28T13:41:22.081Z">
+<meta property="article:modified_time" content="2021-12-01T14:25:27.368Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383682581061.png">
   
   <title>陇原战&#39;疫&#39; - 冬云</title>
 
@@ -177,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      4.5k 字
     </span>
   
 
@@ -186,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      14 分钟
     </span>
   
 
@@ -226,7 +246,174 @@
             <h1 style="display: none">陇原战&#39;疫&#39;</h1>
             
             <div class="markdown-body">
-              
+              <center>time:2021-11-7</center>
+
+<h1 id="power"><a href="#power" class="headerlink" title="power"></a>power</h1><p>题目说是arm汇编</p>
+<p>用 Resource Hacker 打开</p>
+<p>发现S盒</p>
+<p><img src="/img/-16383682581061.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>然后搜索找到main函数</p>
+<p><img src="/img/-16383682581073.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>发现第1253行</p>
+<blockquote>
+<p><strong>.size   <em>ZN3aes14encryption_cbcEPcS0</em>, .-<em>ZN3aes14encryption_cbcEPcS0</em></strong></p>
+</blockquote>
+<p>aes 和 cbc</p>
+<p>所以可以肯定是aes加密 是不是cbc模式难说</p>
+<p>找到16位密钥</p>
+<blockquote>
+<p><strong>this_is_a_key!!!</strong></p>
+</blockquote>
+<p>接着找到密文</p>
+<blockquote>
+<p><strong>1030a9254d44937bed312da03d2db9adbec5762c2eca7b5853e489d2a140427b</strong></p>
+</blockquote>
+<p>之后可以用在线网站aes解码</p>
+<p>使用cbc模式解码失败 换成ecb模式成功</p>
+<p>放上个脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> AES<br><span class="hljs-keyword">from</span> Crypto.Util.number <span class="hljs-keyword">import</span> long_to_bytes<br><br>key = <span class="hljs-string">b&#x27;this_is_a_key!!!&#x27;</span><br>enc = long_to_bytes(<span class="hljs-number">0x1030a9254d44937bed312da03d2db9adbec5762c2eca7b5853e489d2a140427b</span>)<br>ae = AES.new(key, AES.MODE_ECB)<br><br><span class="hljs-built_in">print</span>(ae.decrypt(enc))<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{y0u_found_the_aes_12113112}</strong></p>
+</blockquote>
+<hr>
+<h1 id="findme"><a href="#findme" class="headerlink" title="findme"></a>findme</h1><p>32位 无壳 ida32打开</p>
+<p>找到main函数 发现字符串长度为26</p>
+<p><img src="/img/-16383682984375.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383682984377.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>之后根据主函数中的 off_403844 找到 sub_401866 函数 并进入</p>
+<p><img src="/img/-16383682984379.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>发现函数是RC4加密</p>
+<p>关键点在于第39行的函数 sub_401767 和第42行的 dword_403040 值</p>
+<p>先取出dword的值</p>
+<blockquote>
+<p>  <strong>0xB7, 0xFF, 0xFF, 0xFF, 0x52, 0x00, 0x00, 0x00, 0x85, 0xFF,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xFF, 0xFF, 0xC1, 0xFF, 0xFF, 0xFF, 0x90, 0xFF, 0xFF, 0xFF,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xE9, 0xFF, 0xFF, 0xFF, 0x07, 0x00, 0x00, 0x00, 0xB8, 0xFF,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xFF, 0xFF, 0xE4, 0xFF, 0xFF, 0xFF, 0x1A, 0x00, 0x00, 0x00,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xC3, 0xFF, 0xFF, 0xFF, 0xBD, 0xFF, 0xFF, 0xFF, 0x1D, 0x00,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0x00, 0x00, 0x8E, 0xFF, 0xFF, 0xFF, 0x85, 0xFF, 0xFF, 0xFF,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0x46, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x21, 0x00,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0x00, 0x00, 0x44, 0x00, 0x00, 0x00, 0xAF, 0xFF, 0xFF, 0xFF,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xEF, 0xFF, 0xFF, 0xFF, 0x70, 0x00, 0x00, 0x00, 0x32, 0x00,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0x00, 0x00, 0xB5, 0xFF, 0xFF, 0xFF, 0x11, 0x00, 0x00, 0x00,</strong> </p>
+</blockquote>
+<blockquote>
+<p>  <strong>0xC6, 0xFF, 0xFF, 0xFF</strong></p>
+</blockquote>
+<p>进行整理：</p>
+<blockquote>
+<p><strong>0xB7,0x52,0x85,0xC1,0x90,0xE9,0x07,0xB8,0xE4,0x1A,</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>0xC3,0xBD,0x1D,0x8E,0x85,0x46,0x00,0x21,0x44,0xAF,</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>0xEF,0x70,0x32,0xB5,0x11,0xC6</strong></p>
+</blockquote>
+<p>之后我们需要动调来获得加密后的字符串的值</p>
+<p>断点如下</p>
+<p>main函数的</p>
+<p><img src="/img/-163836829843711.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>sub_401866 函数的</p>
+<p><img src="/img/-163836829843713.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>之后动调</p>
+<p>输入值</p>
+<blockquote>
+<p><strong>12345678901234567890123456</strong></p>
+</blockquote>
+<p>F7 F9 进入函数 sub_401767</p>
+<p>两个窗口对照查看</p>
+<p><img src="/img/-163836829843715.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>首先我们先运行到for循环的最后一行 也就是第21行</p>
+<p><img src="/img/-163836829843817.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>之后我们在 IDA View 中进行单步F8 运行到for循环第一轮结束时候 也就是</p>
+<p><img src="/img/-163836829843819.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>现在我们可以看到 [eax] 里存放的值 是我们输入的值</p>
+<p><img src="/img/-163836829843821.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>dl 的值 也就是 xor edx,ecx 中edx的值 是</p>
+<p><img src="/img/-163836829843823.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>所以我们输入的第一个值 0 经过函数 sub_401767 加密后 变成了 D5</p>
+<p>之后我们可以 通过单步F8的值记录 EDX 的值</p>
+<p>也可以在 sub_401866 函数的第40行继续下断点</p>
+<p>F9执行出来之后F8运行到main函数断点下 回头找到 inputt 的值</p>
+<blockquote>
+<p><strong>0xD5, 0x25, 0xE2, 0xB6, 0xF1, 0x99, 0x4B, 0xD4, 0xB5, 0x1B,</strong> </p>
+</blockquote>
+<blockquote>
+<p><strong>0x81, 0xD0, 0x47, 0x8F, 0xEF, 0x35, 0x05, 0x46, 0x48, 0xEB,</strong> </p>
+</blockquote>
+<blockquote>
+<p><strong>0x8C, 0x21, 0x6C, 0xB8, 0x05, 0x8D</strong></p>
+</blockquote>
+<p>已知是RC4 加密</p>
+<p>用假密文异或假明文得到密钥流，然后用密钥流对密文进行异或得到明文</p>
+<p>可以写脚本求出flag</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs Python">inputt = <span class="hljs-string">&quot;12345678901234567890123456&quot;</span><br><br>dwo = [<span class="hljs-number">0xD5</span>,<span class="hljs-number">0x25</span>,<span class="hljs-number">0xE2</span>,<span class="hljs-number">0xB6</span>,<span class="hljs-number">0xF1</span>,<span class="hljs-number">0x99</span>,<span class="hljs-number">0x4B</span>,<span class="hljs-number">0xD4</span>,<span class="hljs-number">0xB5</span>,<span class="hljs-number">0x1B</span>,<br>       <span class="hljs-number">0x81</span>,<span class="hljs-number">0xD0</span>,<span class="hljs-number">0x47</span>,<span class="hljs-number">0x8F</span>,<span class="hljs-number">0xEF</span>,<span class="hljs-number">0x35</span>,<span class="hljs-number">0x05</span>,<span class="hljs-number">0x46</span>,<span class="hljs-number">0x48</span>,<span class="hljs-number">0xEB</span>,<br>       <span class="hljs-number">0x8C</span>,<span class="hljs-number">0x21</span>,<span class="hljs-number">0x6C</span>,<span class="hljs-number">0xB8</span>,<span class="hljs-number">0x05</span>,<span class="hljs-number">0x8D</span>]<br><br>rc4 = [<span class="hljs-number">0xB7</span>,<span class="hljs-number">0x52</span>,<span class="hljs-number">0x85</span>,<span class="hljs-number">0xC1</span>,<span class="hljs-number">0x90</span>,<span class="hljs-number">0xE9</span>,<span class="hljs-number">0x07</span>,<span class="hljs-number">0xB8</span>,<span class="hljs-number">0xE4</span>,<span class="hljs-number">0x1A</span>,<br>       <span class="hljs-number">0xC3</span>,<span class="hljs-number">0xBD</span>,<span class="hljs-number">0x1D</span>,<span class="hljs-number">0x8E</span>,<span class="hljs-number">0x85</span>,<span class="hljs-number">0x46</span>,<span class="hljs-number">0x00</span>,<span class="hljs-number">0x21</span>,<span class="hljs-number">0x44</span>,<span class="hljs-number">0xAF</span>,<br>       <span class="hljs-number">0xEF</span>,<span class="hljs-number">0x70</span>,<span class="hljs-number">0x32</span>,<span class="hljs-number">0xB5</span>,<span class="hljs-number">0x11</span>,<span class="hljs-number">0xC6</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">26</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-built_in">ord</span>(inputt[i]) ^ unk[i] ^ rc4[i]), end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{Th1s_i5_E2_5tRcm9!}</strong></p>
+</blockquote>
+<hr>
+<h1 id="EasyRE-Revenge"><a href="#EasyRE-Revenge" class="headerlink" title="EasyRE_Revenge"></a>EasyRE_Revenge</h1><p>查壳 ida打开</p>
+<p>找到main函数</p>
+<p>简单分析一下</p>
+<p><img src="/img/-163836837201625.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>进入 sub_411F4 函数中 发现数据出错</p>
+<p><img src="/img/-163836837201627.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>找到出错位置 并向下查看 发现</p>
+<p>很明显 要用idc代码除去花指令 (快捷键 shift+f2)</p>
+<p>(也可以手动nop 这里是先手动nop 然后找出不需要nop的关键数据 再写脚本)</p>
+<p><img src="/img/-163836837201629.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>附上官方idc脚本(自己写不出来。。)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-comment">//IDC脚本</span><br><span class="hljs-keyword">auto</span> addr_start = <span class="hljs-number">0x004117A0</span>;<span class="hljs-comment">//函数起始地址</span><br><span class="hljs-keyword">auto</span> addr_end = <span class="hljs-number">0x00411E58</span>;<span class="hljs-comment">//函数结束地址</span><br><span class="hljs-keyword">auto</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(i=addr_start;i&lt;addr_end;i++)&#123;<br>    <span class="hljs-keyword">if</span>(Dword(i) == <span class="hljs-number">0x1E8</span>)&#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span> ; j&lt;<span class="hljs-number">6</span>; j++,i++ )&#123;<br>            PatchByte(i,<span class="hljs-number">0x90</span>);<span class="hljs-comment">//0x90是nop表示的字节</span><br>        &#125;<br>        i=i+<span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span> ; j&lt;<span class="hljs-number">3</span>; j++,i++ )&#123;<br>            PatchByte(i,<span class="hljs-number">0x90</span>);<br>        &#125;<br>        i=i+<span class="hljs-number">10</span>;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span> ; j&lt;<span class="hljs-number">3</span>; j++,i++ )&#123;<br>            PatchByte(i,<span class="hljs-number">0x90</span>);<br>        &#125;<br>        i=i+<span class="hljs-number">5</span>;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span> ; j&lt;<span class="hljs-number">1</span>; j++,i++ )&#123;<br>            PatchByte(i,<span class="hljs-number">0x90</span>);<br>        &#125;   <br>        i=i+<span class="hljs-number">3</span>;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span> ; j&lt;<span class="hljs-number">2</span>; j++,i++ )&#123;<br>            PatchByte(i,<span class="hljs-number">0x90</span>);<br>        &#125;     <br>        i--;    <br>    &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+
+
+
+<p>之后在有问题的起始地址 p 创建函数 之后查看</p>
+<p>我的效果：</p>
+<p><img src="/img/-163836837201631.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>官方的效果：</p>
+<p><img src="/img/-163836837201633.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>不仅不好看而且还少了一位。。。</p>
+<p>好像少了不止一位 一行也没有了</p>
+<p>Exp:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> z3 <span class="hljs-keyword">import</span> *<br><br>v5 = [<span class="hljs-number">0x271e150c</span>,<span class="hljs-number">0x3b322920</span>,<span class="hljs-number">0x5f564d44</span>,<span class="hljs-number">0x736a6158</span>,<span class="hljs-number">0x978e857c</span>,<span class="hljs-number">0xaba29990</span>,<span class="hljs-number">0xcfc6bdb4</span>,<span class="hljs-number">0xe3dad1c8</span>]<br><br>v6 = [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]<br><br>data = [<span class="hljs-number">0x0EEE8B042</span>,<span class="hljs-number">0x57D0EE6C</span>,<span class="hljs-number">0x0F3F54B32</span>,<span class="hljs-number">0x0D3F0B7D6</span>,<span class="hljs-number">0x0A61C389</span>,<span class="hljs-number">0x38C7BA40</span>,<span class="hljs-number">0x0C3D9E2C</span>,<span class="hljs-number">0x0D64A9284</span>]<br><br>x0=BitVec(<span class="hljs-string">&#x27;x0&#x27;</span>,<span class="hljs-number">32</span>)<br>x1=BitVec(<span class="hljs-string">&#x27;x1&#x27;</span>,<span class="hljs-number">32</span>)<br>x2=BitVec(<span class="hljs-string">&#x27;x2&#x27;</span>,<span class="hljs-number">32</span>)<br>x3=BitVec(<span class="hljs-string">&#x27;x3&#x27;</span>,<span class="hljs-number">32</span>)<br>x4=BitVec(<span class="hljs-string">&#x27;x4&#x27;</span>,<span class="hljs-number">32</span>)<br>x5=BitVec(<span class="hljs-string">&#x27;x5&#x27;</span>,<span class="hljs-number">32</span>)<br>x6=BitVec(<span class="hljs-string">&#x27;x6&#x27;</span>,<span class="hljs-number">32</span>)<br>x7=BitVec(<span class="hljs-string">&#x27;x7&#x27;</span>,<span class="hljs-number">32</span>)<br><br>s = z3.Solver()<br><br>v6[<span class="hljs-number">0</span>]=x0^v5[<span class="hljs-number">2</span>]<br>v6[<span class="hljs-number">1</span>]=x1^v5[<span class="hljs-number">1</span>]<br>v6[<span class="hljs-number">2</span>]=x2^v5[<span class="hljs-number">0</span>]<br>v6[<span class="hljs-number">3</span>]=x3^v5[<span class="hljs-number">7</span>]<br>v6[<span class="hljs-number">4</span>]=x4^v5[<span class="hljs-number">6</span>]<br>v6[<span class="hljs-number">5</span>]=x5^v5[<span class="hljs-number">5</span>]<br>v6[<span class="hljs-number">6</span>]=x6^v5[<span class="hljs-number">4</span>]<br>v6[<span class="hljs-number">7</span>]=x7^v5[<span class="hljs-number">3</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">8</span>):<br>    v6[i] ^= (v6[i] &lt;&lt; <span class="hljs-number">7</span>)<br>    v6[i] ^= v5[(i*<span class="hljs-number">7</span>+<span class="hljs-number">3</span>)%<span class="hljs-number">8</span>]<br>    v6[i] ^= v6[(i*<span class="hljs-number">5</span>+<span class="hljs-number">3</span>)%<span class="hljs-number">8</span>]<br>    v6[i] ^= (v6[i]&lt;&lt;<span class="hljs-number">13</span>)<br>    v6[i] ^= v5[(i*<span class="hljs-number">7</span>+<span class="hljs-number">5</span>)%<span class="hljs-number">8</span>]<br>    v6[i] ^= (v6[i]&lt;&lt;<span class="hljs-number">17</span>)<br>    <br>s.add(data[<span class="hljs-number">0</span>]==v6[<span class="hljs-number">0</span>],data[<span class="hljs-number">1</span>]==v6[<span class="hljs-number">1</span>],data[<span class="hljs-number">2</span>]==v6[<span class="hljs-number">2</span>],data[<span class="hljs-number">3</span>]==v6[<span class="hljs-number">3</span>],data[<span class="hljs-number">4</span>]==v6[<span class="hljs-number">4</span>],data[<span class="hljs-number">5</span>]==v6[<span class="hljs-number">5</span>],data[<span class="hljs-number">6</span>]==v6[<span class="hljs-number">6</span>],data[<span class="hljs-number">7</span>]==v6[<span class="hljs-number">7</span>],)<br><br><span class="hljs-keyword">if</span> s.check() == sat:    <span class="hljs-comment">#z3标配语句 若有结果则赋值给result</span><br>    result = s.model()<br><br><span class="hljs-comment">#print(result)</span><br><br><span class="hljs-comment">#x0 = 1630954594,x1 = 828781622,x2 = 862085687,x3 = 909140836,x4 = 825516597,x5 = 1633759329,x6 = 879047012,x7 = 943285560</span><br><br>flag = [<span class="hljs-number">1630954594</span>,<span class="hljs-number">828781622</span>,<span class="hljs-number">862085687</span>,<span class="hljs-number">909140836</span>,<span class="hljs-number">825516597</span>,<span class="hljs-number">1633759329</span>,<span class="hljs-number">879047012</span>,<span class="hljs-number">943285560</span>]<br><span class="hljs-comment">#转成字符</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">THEFLAG</span>(<span class="hljs-params">t</span>):</span>    <span class="hljs-comment">#试了半天别的方法 感觉还是这个方法好一点</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">4</span>):<br>        num = t % <span class="hljs-number">0x100</span><br>        <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(num), end=<span class="hljs-string">&#x27;&#x27;</span>)<br>        t = t // <span class="hljs-number">0x100</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(flag)):<br>    THEFLAG(flag[i])<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{bd6a64f17bb3dc065b41a0aad1e48e98}</strong></p>
+</blockquote>
+<hr>
+<h1 id="O"><a href="#O" class="headerlink" title="O"></a>O</h1><p>参考：<a target="_blank" rel="noopener" href="https://hackmd.io/@crazyman/SkyAgiK4F#Reverse">https://hackmd.io/@crazyman/SkyAgiK4F#Reverse</a></p>
+<p>emo了</p>
+
             </div>
             <hr>
             <div>

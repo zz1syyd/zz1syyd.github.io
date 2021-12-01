@@ -18,14 +18,31 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta property="og:type" content="article">
+  <meta name="description" content="time:2021-11-13  Lithops无壳 32位 ida32打开  从输入到 check 有很多函数 莽一点 从check函数下断点 步入进去看看试试 输入任意长的flag之后进入 check 函数  再直接从 return 处下断点 f9 运行  双击进入 dword_813C60 查看 发现两处引用 且有一处引用是在我们的 check 函数 点击追踪过去  之后我们程序运行到此处时">
+<meta property="og:type" content="article">
 <meta property="og:title" content="深育杯">
 <meta property="og:url" content="https://www.zz1syyd.com/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/index.html">
 <meta property="og:site_name" content="冬云">
+<meta property="og:description" content="time:2021-11-13  Lithops无壳 32位 ida32打开  从输入到 check 有很多函数 莽一点 从check函数下断点 步入进去看看试试 输入任意长的flag之后进入 check 函数  再直接从 return 处下断点 f9 运行  双击进入 dword_813C60 查看 发现两处引用 且有一处引用是在我们的 check 函数 点击追踪过去  之后我们程序运行到此处时">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383689370851.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383689370853.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383689370855.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383689370857.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383689370859.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836893708611.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836893708613.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836893708615.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836899417117.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836899417119.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836899417121.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836905228223.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836905228325.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836905228327.png">
 <meta property="article:published_time" content="2021-11-28T13:34:05.000Z">
-<meta property="article:modified_time" content="2021-11-28T13:34:54.531Z">
+<meta property="article:modified_time" content="2021-12-01T14:38:54.327Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383689370851.png">
   
   <title>深育杯 - 冬云</title>
 
@@ -177,7 +194,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      3.1k 字
     </span>
   
 
@@ -186,7 +203,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      10 分钟
     </span>
   
 
@@ -226,7 +243,102 @@
             <h1 style="display: none">深育杯</h1>
             
             <div class="markdown-body">
-              
+              <center>time:2021-11-13</center>
+
+<h1 id="Lithops"><a href="#Lithops" class="headerlink" title="Lithops"></a>Lithops</h1><p>无壳 32位 ida32打开</p>
+<p><img src="/img/-16383689370851.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>从输入到 check 有很多函数</p>
+<p>莽一点 从check函数下断点 步入进去看看试试</p>
+<p>输入任意长的flag之后进入 check 函数</p>
+<p><img src="/img/-16383689370853.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>再直接从 return 处下断点 f9 运行</p>
+<p><img src="/img/-16383689370855.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>双击进入 dword_813C60 查看 发现两处引用</p>
+<p>且有一处引用是在我们的 check 函数</p>
+<p>点击追踪过去</p>
+<p><img src="/img/-16383689370857.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>之后我们程序运行到此处时</p>
+<p><img src="/img/-16383689370859.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>发现 push ecx 中的 ecx 里面存放的值是我们的输入</p>
+<p><img src="/img/-163836893708611.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>而继续运行下去</p>
+<p>push edx 中的 edx 值为</p>
+<p><img src="/img/-163836893708613.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>取出查看</p>
+<blockquote>
+<p><strong>0xE4, 0xB8, 0x8D, 0xE5, 0x81, 0x9A, 0xE4, 0xBC, 0x9F, 0xE5, 0xA4, 0xA7, 0xE6, 0x97, 0xB6, 0xE4, 0xBB, 0xA3, 0xE7, 0x9A, 0x84, 0xE6, 0x97, 0x81, 0xE8, 0xA7, 0x82, 0xE8, 0x80, 0x85</strong></p>
+</blockquote>
+<p>自己没有发现这是 UTF-8 编码方式</p>
+<p>(赛后wp里面写明 此程序在加密过程中调用了 UTF-8 编码)</p>
+<p>放上一点知识：</p>
+<blockquote>
+<p><strong><a href="https://link.zhihu.com/?target=https://unicode-table.com/cn/">unicode-table.com/cn/</a></strong></p>
+</blockquote>
+<p>最后找个网站解码即可</p>
+<p><img src="/img/-163836893708615.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<blockquote>
+<p><strong>flag{不做伟大时代的旁观者}</strong></p>
+</blockquote>
+<hr>
+<h1 id="press"><a href="#press" class="headerlink" title="press"></a>press</h1><p>查壳 无壳 ida64打开</p>
+<p><img src="/img/-163836899417117.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>最后main函数输出out文件 内容</p>
+<blockquote>
+<p><strong>60 E1 2F 05 79 80 5E E1 C5 57 8B CC 5C 9A 67 26 1E 19 AF 93 3F 09 E2 97 99 7B 86 C1 25 87 D6 0C DD CF 2A F5 65 0E 73 59 1D 5F A4 F4 65 68 D1 3D D2 98 5D FE 5B EF 5B CC</strong></p>
+</blockquote>
+<p>查看关键函数1</p>
+<p><img src="/img/-163836899417119.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p><strong>++++++++++[-&gt;++++++++++++++++&lt;],[-&gt;-&lt;]&gt;&gt;[-]+++++&lt;*++.&lt;</strong></p>
+</blockquote>
+<p>查看关键函数2</p>
+<p><img src="/img/-163836899417121.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>说明了每个字符的操作 类似小型虚拟机 和真brainfuck加密不同</p>
+<p>所以只能一步一步读取</p>
+<p>贴一个师傅转成的代码</p>
+<p>这里对指令的解读是难点 有点恶心人</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs C">ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">0</span>] += <span class="hljs-number">1</span>;    <span class="hljs-comment">//ptr[0] = 10</span><br><br><span class="hljs-keyword">while</span><br> (ptr[<span class="hljs-number">0</span>]) &#123;<br>ptr[<span class="hljs-number">0</span>] -= <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">1</span>] += <span class="hljs-number">16</span>;    <span class="hljs-comment">//ptr[1] += 160</span><br>&#125;<br><br>ptr[<span class="hljs-number">0</span>] = get();<br><br><span class="hljs-keyword">while</span><br> (ptr[<span class="hljs-number">0</span>]) &#123;<br>ptr[<span class="hljs-number">0</span>] -= <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">1</span>] -= <span class="hljs-number">1</span>;    <span class="hljs-comment">//ptr[1] = 160 - 输入的大小</span><br>&#125;<br><br><span class="hljs-keyword">while</span><br> (ptr[<span class="hljs-number">2</span>]) &#123;<br>ptr[<span class="hljs-number">2</span>] -= <span class="hljs-number">1</span>;<br>&#125;<br><br>ptr[<span class="hljs-number">2</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">2</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">2</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">2</span>] += <span class="hljs-number">1</span>;<br>ptr[<span class="hljs-number">2</span>] += <span class="hljs-number">1</span>;    <span class="hljs-comment">//ptr[2] = 5    也就是ptr[1] *= 5</span><br>ptr[<span class="hljs-number">1</span>] += <span class="hljs-number">1</span>;    <br>ptr[<span class="hljs-number">1</span>] += <span class="hljs-number">1</span>;    <span class="hljs-comment">//ptr[1] += 2</span><br><br>put(ptr[<span class="hljs-number">1</span>]);    <span class="hljs-comment">//output = (x + 160-input) * 5 + 2</span><br></code></pre></td></tr></table></figure>
+
+<p>解密时需要注意溢出</p>
+<p>脚本:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs Python">out = [<span class="hljs-number">0x060</span>,<span class="hljs-number">0x0E1</span>,<span class="hljs-number">0x02F</span>,<span class="hljs-number">0x005</span>,<span class="hljs-number">0x079</span>,<span class="hljs-number">0x080</span>,<span class="hljs-number">0x05E</span>,<span class="hljs-number">0x0E1</span>,<span class="hljs-number">0x0C5</span>,<span class="hljs-number">0x057</span>,<span class="hljs-number">0x08B</span>,<span class="hljs-number">0x0CC</span>,<span class="hljs-number">0x05C</span>,<br>       <span class="hljs-number">0x09A</span>,<span class="hljs-number">0x067</span>,<span class="hljs-number">0x026</span>,<span class="hljs-number">0x01E</span>,<span class="hljs-number">0x019</span>,<span class="hljs-number">0x0AF</span>,<span class="hljs-number">0x093</span>,<span class="hljs-number">0x03F</span>,<span class="hljs-number">0x009</span>,<span class="hljs-number">0x0E2</span>,<span class="hljs-number">0x097</span>,<span class="hljs-number">0x099</span>,<span class="hljs-number">0x07B</span>,<br>       <span class="hljs-number">0x086</span>,<span class="hljs-number">0x0C1</span>,<span class="hljs-number">0x025</span>,<span class="hljs-number">0x087</span>,<span class="hljs-number">0x0D6</span>,<span class="hljs-number">0x00C</span>,<span class="hljs-number">0x0DD</span>,<span class="hljs-number">0x0CF</span>,<span class="hljs-number">0x02A</span>,<span class="hljs-number">0x0F5</span>,<span class="hljs-number">0x065</span>,<span class="hljs-number">0x00E</span>,<span class="hljs-number">0x073</span>,<br>       <span class="hljs-number">0x059</span>,<span class="hljs-number">0x01D</span>,<span class="hljs-number">0x05F</span>,<span class="hljs-number">0x0A4</span>,<span class="hljs-number">0x0F4</span>,<span class="hljs-number">0x065</span>,<span class="hljs-number">0x068</span>,<span class="hljs-number">0x0D1</span>,<span class="hljs-number">0x03D</span>,<span class="hljs-number">0x0D2</span>,<span class="hljs-number">0x098</span>,<span class="hljs-number">0x05D</span>,<span class="hljs-number">0x0FE</span>,<span class="hljs-number">0x05B</span>,<span class="hljs-number">0x0EF</span>,<span class="hljs-number">0x05B</span>,<span class="hljs-number">0x0CC</span>]<br>flag = <span class="hljs-string">&#x27;&#x27;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(out)):<br>   ens = out[i] - <span class="hljs-number">2</span><br><br>   <span class="hljs-keyword">while</span>(ens != ens // <span class="hljs-number">5</span> * <span class="hljs-number">5</span>):<br>       ens += <span class="hljs-number">0x100</span><br>   ens = ens // <span class="hljs-number">5</span><br><br>   <span class="hljs-keyword">if</span>(i == <span class="hljs-number">0</span>):<br>       flag += <span class="hljs-built_in">chr</span>(<span class="hljs-number">160</span> - ens)<br>   <span class="hljs-keyword">else</span>:<br>       flag += <span class="hljs-built_in">chr</span>((out[i-<span class="hljs-number">1</span>] + <span class="hljs-number">160</span> - ens) % <span class="hljs-number">0x100</span>)<br><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>ZmxhZ3tkZTBiZDY3ZS02ZDI1LTg3ZDctMTg3Ni1hZDEzMWE2MTY1Y2J9</strong></p>
+</blockquote>
+<p>base64解码即可</p>
+<hr>
+<blockquote>
+<p><strong>flag{de0bd67e-6d25-87d7-1876-ad131a6165cb}</strong></p>
+</blockquote>
+<hr>
+<h1 id="xor-exercise"><a href="#xor-exercise" class="headerlink" title="xor_exercise"></a>xor_exercise</h1><p><img src="/img/-163836905228223.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>default去除之后会有残留</p>
+<p>类似这种永真永假的语句</p>
+<p><img src="/img/-163836905228325.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>官方wp写的是</p>
+<p><img src="/img/-163836905228327.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>其实查看了官方给出的script.py之后  明白了就是用idapython nop掉无用代码</p>
+<p>附上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">patch_nop</span>(<span class="hljs-params">start, end</span>):</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(start, end):<br>        PatchByte(i, <span class="hljs-number">0x90</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">next_instr</span>(<span class="hljs-params">addr</span>):</span><br>    <span class="hljs-keyword">return</span> addr+ItemSize(addr)<br><br>st = <span class="hljs-number">0x0000000000401170</span><br>end = <span class="hljs-number">0x0000000000402de0</span><br><br>addr = st<br><span class="hljs-keyword">while</span>(addr &lt; end):<br>    <span class="hljs-built_in">next</span> = next_instr(addr)<br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;ds:y&quot;</span> <span class="hljs-keyword">in</span> GetDisasm(addr):<br>        <span class="hljs-keyword">while</span>(<span class="hljs-literal">True</span>):<br>            addr = <span class="hljs-built_in">next</span><br>            <span class="hljs-built_in">next</span> = next_instr(addr)<br>            <span class="hljs-keyword">if</span> <span class="hljs-string">&quot;jnz&quot;</span> <span class="hljs-keyword">in</span> GetDisasm(addr):<br>                dest = GetOperandValue(addr, <span class="hljs-number">0</span>)<br>                PatchByte(addr, <span class="hljs-number">0xe9</span>)<br>                PatchByte(addr+<span class="hljs-number">5</span>, <span class="hljs-number">0x90</span>)<br>                offset = dest - (addr + <span class="hljs-number">5</span>)<br>                PatchDword(addr + <span class="hljs-number">1</span>, offset)<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;patch bcf: 0x%x&quot;</span> % addr)<br>                addr = <span class="hljs-built_in">next</span><br>                <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">else</span>:<br>        addr = <span class="hljs-built_in">next</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>ida里面 shitf+f2 运行代码发现报错</p>
+<blockquote>
+<p><strong>NameError: name ‘ItemSize’ is not defined</strong></p>
+</blockquote>
+<p>查找资料找到解决办法：</p>
+<blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1403005-1-1.html">关于IDA7.5 IDApython api差异问题及解决办法 - 『脱壳破解区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn</a></strong></p>
+</blockquote>
+<p>题目是crc64加密</p>
+<p>从官方发的更新后的题文件能找到相关数字串来确定是crc64加密(虽然我自己看不出来就是了)</p>
+<p>贴个其他师傅写的脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Python">cmp = [<span class="hljs-number">0x32E9A65483CC9671</span>, <span class="hljs-number">0xEC92A986A4AF329C</span>, <span class="hljs-number">0x96C8259BC2AC4673</span>,<br>       <span class="hljs-number">0x74BF5DCA4423530F</span>, <span class="hljs-number">0x59D78EF8FDCBFAB1</span>, <span class="hljs-number">0xA65257E5B13942B1</span>]<br>       <br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">64</span>):<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">int</span>(cmp[i])&amp;<span class="hljs-number">1</span>)==<span class="hljs-number">1</span>:<br>            cmp[i] ^= <span class="hljs-number">0xB1234B7679FC4B3D</span><br>            cmp[i] = cmp[i]&gt;&gt;<span class="hljs-number">1</span><br>            cmp[i] |= <span class="hljs-number">0x8000000000000000</span><br>        <span class="hljs-keyword">else</span>:<br>            cmp[i] = cmp[i]&gt;&gt;<span class="hljs-number">1</span><br>            <br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">hex</span>(cmp[i]), end=<span class="hljs-string">&#x27;,&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+
             </div>
             <hr>
             <div>

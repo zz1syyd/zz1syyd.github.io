@@ -18,14 +18,25 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta property="og:type" content="article">
+  <meta name="description" content="time:2021-11-13 to 2021-11-14  baby_upxupx壳 正常的脱壳指令为  upx -d baby_upx.exe  发现报错  所以自己手动脱了一下 出来之后ida32打开   看了官方的wp之后发现直接upx指令脱壳是可以的  upx -d baby_upx.exe -o baby_upx_dump.exe  ida32打开 (发现手脱结果都差不多)  写脚本：">
+<meta property="og:type" content="article">
 <meta property="og:title" content="河北师范大学">
 <meta property="og:url" content="https://www.zz1syyd.com/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/index.html">
 <meta property="og:site_name" content="冬云">
+<meta property="og:description" content="time:2021-11-13 to 2021-11-14  baby_upxupx壳 正常的脱壳指令为  upx -d baby_upx.exe  发现报错  所以自己手动脱了一下 出来之后ida32打开   看了官方的wp之后发现直接upx指令脱壳是可以的  upx -d baby_upx.exe -o baby_upx_dump.exe  ida32打开 (发现手脱结果都差不多)  写脚本：">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383693664851.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383693664863.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383693664865.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383693664877.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383694038719.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836940387111.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836940387113.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-163836940387115.png">
 <meta property="article:published_time" content="2021-11-28T13:34:15.000Z">
-<meta property="article:modified_time" content="2021-11-28T13:35:11.103Z">
+<meta property="article:modified_time" content="2021-12-01T14:38:35.742Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383693664851.png">
   
   <title>河北师范大学 - 冬云</title>
 
@@ -177,7 +188,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      2.7k 字
     </span>
   
 
@@ -186,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      8 分钟
     </span>
   
 
@@ -226,7 +237,93 @@
             <h1 style="display: none">河北师范大学</h1>
             
             <div class="markdown-body">
-              
+              <center>time:2021-11-13 to 2021-11-14</center>
+
+<h1 id="baby-upx"><a href="#baby-upx" class="headerlink" title="baby_upx"></a>baby_upx</h1><p>upx壳</p>
+<p>正常的脱壳指令为</p>
+<blockquote>
+<p><strong>upx -d baby_upx.exe</strong></p>
+</blockquote>
+<p>发现报错</p>
+<p><img src="/img/-16383693664851.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>所以自己手动脱了一下</p>
+<p>出来之后ida32打开</p>
+<p><img src="/img/-16383693664863.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383693664865.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>看了官方的wp之后发现直接upx指令脱壳是可以的</p>
+<blockquote>
+<p><strong>upx -d baby_upx.exe -o baby_upx_dump.exe</strong></p>
+</blockquote>
+<p>ida32打开 (发现手脱结果都差不多)</p>
+<p><img src="/img/-16383693664877.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>写脚本：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> v7[<span class="hljs-number">5</span>];<br>    v7[<span class="hljs-number">0</span>] = <span class="hljs-number">2099915543</span>;<br>    v7[<span class="hljs-number">1</span>] = <span class="hljs-number">120201498</span>;<br>    v7[<span class="hljs-number">2</span>] = <span class="hljs-number">269490557</span>;<br>    v7[<span class="hljs-number">3</span>] = <span class="hljs-number">67837461</span>;<br>    v7[<span class="hljs-number">4</span>] = <span class="hljs-number">271401</span>;<br><br>    <span class="hljs-keyword">char</span> String[] = <span class="hljs-string">&quot;HECTF&quot;</span>;<br>    <span class="hljs-keyword">char</span>* flag = (<span class="hljs-keyword">char</span>*)v7; <span class="hljs-comment">//此行作用为 将v7转换成char类型并将指针赋给flag</span><br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">19</span>;i++)<br>        flag[i] ^= String[(i ^ (rand() + <span class="hljs-number">10086</span>)) % <span class="hljs-number">5</span>];    <span class="hljs-comment">//使用 C 写exp的原因大概是因为rand()</span><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,flag);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{Thi5_iiS5_UUPX_LalA}</strong></p>
+</blockquote>
+<hr>
+<h1 id="baby-pp"><a href="#baby-pp" class="headerlink" title="baby_pp"></a>baby_pp</h1><p>查壳 发现是python写的 exe 文件</p>
+<p><img src="/img/-16383694038719.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>具体过程参考</p>
+<p><img src="/img/-163836940387111.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>之后找个在线网站pyc反编译</p>
+<p>(发现在线反编译效果不是很好 文件中重要内容丢失)</p>
+<p>(于是自己折腾了半天 搞好了uncompyle6)</p>
+<p>(因为uncompyle6最高支持到python3.8   而自己windows的python是3.10  kali的python是3.9和2.7</p>
+<p>所以只能在kali下更换python版本 之后安装python2的pip 再安装uncompyle6)</p>
+<p>更换python版本</p>
+<blockquote>
+<p><strong>update-alternatives –config python</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>#之后选择序号</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>#详细教程👇</strong></p>
+</blockquote>
+<blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/159483149">ubuntu下切换默认python版本 - 知乎 (zhihu.com)</a></strong></p>
+</blockquote>
+<blockquote>
+<p><strong>uncompyle6 -o main.py main.pyc</strong></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># uncompyle6 version 3.8.0</span><br><span class="hljs-comment"># Python bytecode 3.8.0 (3413)</span><br><span class="hljs-comment"># Decompiled from: Python 3.9.7 (default, Sep 24 2021, 09:43:00) </span><br><span class="hljs-comment"># [GCC 10.3.0]</span><br><span class="hljs-comment"># Embedded file name: main.py</span><br><span class="hljs-comment"># Compiled at: 1995-09-28 00:18:56</span><br><span class="hljs-comment"># Size of source mod 2**32: 272 bytes</span><br><span class="hljs-keyword">import</span> random<br>ens = <span class="hljs-string">&#x27;742641edefb6770733ab5932325106b3a5fa75222791d09e451161c46f15504402b32737362443d4df7d136145cd970b54116669c230&#x27;</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encode</span>(<span class="hljs-params">s, nuum</span>):</span>    <span class="hljs-comment">#step为18</span><br>    step = <span class="hljs-built_in">len</span>(s) // nuum<br>    ens = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(step):<br>        ens += s[i::step]    <span class="hljs-comment">#打乱顺序</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> ens<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>():</span><br>    random.seed(<span class="hljs-number">10085</span>)    <span class="hljs-comment">#rand种子为定值</span><br>    u_input = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;: &#x27;</span>)<br>    t = <span class="hljs-string">&#x27;&#x27;</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> u_input:<br>        t += <span class="hljs-string">&#x27;%02x&#x27;</span> % (<span class="hljs-built_in">ord</span>(i) ^ random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">127</span>))    <span class="hljs-comment">#关键异或</span><br>                                                           <span class="hljs-comment">#其中 %02x 代表输入的值每两个一组作为一个十六进制数</span><br>    <span class="hljs-keyword">else</span>:                                                  <span class="hljs-comment">#也就是我们解密输入的字符串长度为54</span><br>        eni = encode(t, <span class="hljs-number">6</span>)    <span class="hljs-comment">#加密后的结果已给出</span><br>        <span class="hljs-keyword">if</span> eni == ens:    <span class="hljs-comment">#ens长为108</span><br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Success!&#x27;</span>)<br>        <span class="hljs-keyword">else</span>:<br>            <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Failed!&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+
+
+
+<p>第15行:       ens += s[i::step]</p>
+<p>举个例子来说明其作用</p>
+<p><img src="/img/-163836940387113.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>所以解密脚本 先恢复顺序 再进行异或</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> random<br><br>random.seed(<span class="hljs-number">10085</span>)<br><br>ens = <span class="hljs-string">&#x27;742641edefb6770733ab5932325106b3a5fa75222791d09e451161c46f15504402b32737362443d4df7d136145cd970b54116669c230&#x27;</span><br>flag = <span class="hljs-string">&#x27;&#x27;</span><br>t = <span class="hljs-string">&#x27;&#x27;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">18</span>):<br>        t += ens[i + j*<span class="hljs-number">6</span>]<br><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-number">108</span>,<span class="hljs-number">2</span>):<br>    flag += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(t[x:x+<span class="hljs-number">2</span>],<span class="hljs-number">16</span>) ^ random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">127</span>))<br><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+
+<p>其中 关于数组中[::]切片问题详细可以看</p>
+<blockquote>
+<p><strong>[(18条消息) Python中numpy数组切片：print(a<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43629813/article/details/101122997">0::2])、a[::2]、[:,2]、[1:,-1:]、a[::-1]、[ : n]、[m : ]、[-1]、[:-1]、[1:]等的含义（详细）<em>锵锵锵锵蒋的博客-CSDN博客</em>[::2]</a></strong></p>
+</blockquote>
+<p>运行 输出</p>
+<blockquote>
+<p><strong>HECTF{decrypt(80410840840842108808881088408084210842)}</strong></p>
+</blockquote>
+<p>第一次接触云影密码 特点是</p>
+<p><img src="/img/-163836940387115.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<blockquote>
+<p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanchu/p/13492904.html">Crypto入门 （六）幂数加密（云影密码） - 缘初 - 博客园 (cnblogs.com)</a></strong></p>
+</blockquote>
+<p>附上一个云影解密脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Python">ens = <span class="hljs-string">&#x27;80410840840842108808881088408084210842&#x27;</span>  <span class="hljs-comment">#云影加密密文</span><br>result = ens.split(<span class="hljs-string">&quot;0&quot;</span>) <span class="hljs-comment">#遇到‘0’时分割</span><br>flag = <span class="hljs-string">&#x27;&#x27;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(result)):<br>    <span class="hljs-built_in">str</span> = result[i]<br>    t = <span class="hljs-number">0</span>    <span class="hljs-comment">#每次循环t清零</span><br><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">str</span>:<br>        t += <span class="hljs-built_in">int</span>(i)<br><br>    flag += <span class="hljs-built_in">chr</span>(t + <span class="hljs-number">64</span>)    <span class="hljs-comment">#云影加密对应的是大写字母</span><br><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{HELLOPYTHON}</strong></p>
+</blockquote>
+
             </div>
             <hr>
             <div>

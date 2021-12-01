@@ -171,7 +171,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
+          <img src="/img/hectf.png" srcset="/img/loading.gif" lazyload alt="河北师范大学">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
@@ -185,7 +191,26 @@
           
             
           
-          
+          time:2021-11-13 to 2021-11-14
+
+baby_upxupx壳
+正常的脱壳指令为
+
+upx -d baby_upx.exe
+
+发现报错
+
+所以自己手动脱了一下
+出来之后ida32打开
+
+
+看了官方的wp之后发现直接upx指令脱壳是可以的
+
+upx -d baby_upx.exe -o baby_upx_dump.exe
+
+ida32打开 (发现手脱结果都差不多)
+
+写脚本：
         </a>
       </p>
 
@@ -214,7 +239,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          <img src="/img/syb.png" srcset="/img/loading.gif" lazyload alt="深育杯">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
@@ -228,7 +259,21 @@
           
             
           
-          
+          time:2021-11-13
+
+Lithops无壳 32位 ida32打开
+
+从输入到 check 有很多函数
+莽一点 从check函数下断点 步入进去看看试试
+输入任意长的flag之后进入 check 函数
+
+再直接从 return 处下断点 f9 运行
+
+双击进入 dword_813C60 查看 发现两处引用
+且有一处引用是在我们的 check 函数
+点击追踪过去
+
+之后我们程序运行到此处时
         </a>
       </p>
 
@@ -257,7 +302,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E9%99%87%E5%8E%9F%E6%88%98%E2%80%98%E7%96%AB%E2%80%99/" target="_self">
+          <img src="/img/lyzy.png" srcset="/img/loading.gif" lazyload alt="陇原战&#39;疫&#39;">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/reverse/%E9%99%87%E5%8E%9F%E6%88%98%E2%80%98%E7%96%AB%E2%80%99/" target="_self">
@@ -271,7 +322,23 @@
           
             
           
-          
+          time:2021-11-7
+
+power题目说是arm汇编
+用 Resource Hacker 打开
+发现S盒
+
+然后搜索找到main函数
+
+发现第1253行
+
+.size   ZN3aes14encryption_cbcEPcS0, .-ZN3aes14encryption_cbcEPcS0
+
+aes 和 cbc
+所以可以肯定是aes加密 是不是cbc模式难说
+找到16位密钥
+
+this_is
         </a>
       </p>
 
@@ -300,7 +367,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E9%B9%A4%E5%9F%8E%E6%9D%AF/" target="_self">
+          <img src="/img/hcb.jpg" srcset="/img/loading.gif" lazyload alt="鹤城杯">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/reverse/%E9%B9%A4%E5%9F%8E%E6%9D%AF/" target="_self">
@@ -314,7 +387,24 @@
           
             
           
-          
+          time:2021-10-8
+
+Petition32位无壳
+
+shift+f12找字符串 没发现
+转换找main函数 没有
+只能打开start函数
+
+发现函数嵌套函数
+
+进入sub_119C 发现函数嵌套函数
+
+进入sub_122A 发现函数嵌套函数。。。。
+一直循环了下去 且变化的数是
+
+初步怀疑两数异或的值
+试一下前几个值进行异或：
+1234print(chr(0x1e^0x78),end=&
         </a>
       </p>
 
@@ -363,7 +453,9 @@
           
             
           
-          easy_re 查壳（工具 Exeinfo PE） 发现无壳 32位
+          time:2021-9-29
+
+easy_re 查壳（工具 Exeinfo PE） 发现无壳 32位
 
 1.静态分析扔进ida32打开 找到main函数 f5反编译一下
 
@@ -372,9 +464,7 @@ shift+f12打开字符串窗口
 
 找到与flag有关的字符串双击 找到IDA View窗口中标红的地方
 
-关键点为 jz跳转命令是一个无效指令 导致下面adc [edx],esp无法执行
-
-选中jz指令
+关键点为 jz跳转命令是一个无效指令 导致下面adc [edx]
         </a>
       </p>
 

@@ -18,14 +18,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta property="og:type" content="article">
+  <meta name="description" content="time:2021-10-8  Petition32位无壳  shift+f12找字符串 没发现 转换找main函数 没有 只能打开start函数  发现函数嵌套函数  进入sub_119C 发现函数嵌套函数  进入sub_122A 发现函数嵌套函数。。。。 一直循环了下去 且变化的数是  初步怀疑两数异或的值 试一下前几个值进行异或： 1234print(chr(0x1e^0x78),end&#x3D;&amp;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="鹤城杯">
 <meta property="og:url" content="https://www.zz1syyd.com/reverse/%E9%B9%A4%E5%9F%8E%E6%9D%AF/index.html">
 <meta property="og:site_name" content="冬云">
+<meta property="og:description" content="time:2021-10-8  Petition32位无壳  shift+f12找字符串 没发现 转换找main函数 没有 只能打开start函数  发现函数嵌套函数  进入sub_119C 发现函数嵌套函数  进入sub_122A 发现函数嵌套函数。。。。 一直循环了下去 且变化的数是  初步怀疑两数异或的值 试一下前几个值进行异或： 1234print(chr(0x1e^0x78),end&#x3D;&amp;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383679498351.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383679498363.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383679498365.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383679498367.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-16383679498369.png">
 <meta property="article:published_time" content="2021-11-28T13:33:42.000Z">
-<meta property="article:modified_time" content="2021-11-28T13:35:06.502Z">
+<meta property="article:modified_time" content="2021-12-01T14:13:27.560Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383679498351.png">
   
   <title>鹤城杯 - 冬云</title>
 
@@ -177,7 +185,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      2.1k 字
     </span>
   
 
@@ -186,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      6 分钟
     </span>
   
 
@@ -226,7 +234,39 @@
             <h1 style="display: none">鹤城杯</h1>
             
             <div class="markdown-body">
-              
+              <center>time:2021-10-8</center>
+
+<h1 id="Petition"><a href="#Petition" class="headerlink" title="Petition"></a>Petition</h1><p>32位无壳</p>
+<p><img src="/img/-16383679498351.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>shift+f12找字符串 没发现</p>
+<p>转换找main函数 没有</p>
+<p>只能打开start函数</p>
+<p><img src="/img/-16383679498363.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>发现函数嵌套函数</p>
+<p><img src="/img/-16383679498365.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>进入sub_119C 发现函数嵌套函数</p>
+<p><img src="/img/-16383679498367.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>进入sub_122A 发现函数嵌套函数。。。。</p>
+<p>一直循环了下去 且变化的数是</p>
+<p><img src="/img/-16383679498369.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>初步怀疑两数异或的值</p>
+<p>试一下前几个值进行异或：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x1e</span>^<span class="hljs-number">0x78</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x6c</span>^<span class="hljs-number">0x00</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x07</span>^<span class="hljs-number">0x66</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xa9</span>^<span class="hljs-number">0xce</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>得出</p>
+<blockquote>
+<p><strong>flag</strong></p>
+</blockquote>
+<p>猜想成立 一直写下去</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x1e</span>^<span class="hljs-number">0x78</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x6c</span>^<span class="hljs-number">0x00</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x07</span>^<span class="hljs-number">0x66</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xa9</span>^<span class="hljs-number">0xce</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xf9</span>^<span class="hljs-number">0x82</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x8c</span>^<span class="hljs-number">0xb5</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x88</span>^<span class="hljs-number">0xbe</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xcb</span>^<span class="hljs-number">0xa8</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x52</span>^<span class="hljs-number">0x64</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xa0</span>^<span class="hljs-number">0x99</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x19</span>^<span class="hljs-number">0x2f</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x21</span>^<span class="hljs-number">0x15</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x66</span>^<span class="hljs-number">0x50</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x03</span>^<span class="hljs-number">0x2e</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xaf</span>^<span class="hljs-number">0x97</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xf6</span>^<span class="hljs-number">0xc7</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x43</span>^<span class="hljs-number">0x7b</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x18</span>^<span class="hljs-number">0x2c</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xc9</span>^<span class="hljs-number">0xe4</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xfe</span>^<span class="hljs-number">0xca</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x66</span>^<span class="hljs-number">0x55</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x9c</span>^<span class="hljs-number">0xaa</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x4c</span>^<span class="hljs-number">0x7f</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x00</span>^<span class="hljs-number">0x2d</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x25</span>^<span class="hljs-number">0x1d</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xd6</span>^<span class="hljs-number">0xb2</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x9a</span>^<span class="hljs-number">0xff</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x7d</span>^<span class="hljs-number">0x44</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xbd</span>^<span class="hljs-number">0x90</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x45</span>^<span class="hljs-number">0x72</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x65</span>^<span class="hljs-number">0x56</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x6e</span>^<span class="hljs-number">0x08</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x85</span>^<span class="hljs-number">0xb2</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x12</span>^<span class="hljs-number">0x21</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x7f</span>^<span class="hljs-number">0x46</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x2b</span>^<span class="hljs-number">0x13</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x24</span>^<span class="hljs-number">0x14</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xfc</span>^<span class="hljs-number">0xca</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x24</span>^<span class="hljs-number">0x12</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x50</span>^<span class="hljs-number">0x33</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0x12</span>^<span class="hljs-number">0x23</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xea</span>^<span class="hljs-number">0x97</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(<span class="hljs-number">0xb2</span>^<span class="hljs-number">0xb2</span>),end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<blockquote>
+<p><strong>flag{96c69646-8184-4363-8de9-73f7398066c1}</strong></p>
+</blockquote>
+
             </div>
             <hr>
             <div>
