@@ -175,9 +175,9 @@
   
   
   <entry>
-    <title>demo</title>
-    <link href="/others/demo/"/>
-    <url>/others/demo/</url>
+    <title>文章&amp;&amp;工具</title>
+    <link href="/others/%E6%96%87%E7%AB%A0&amp;&amp;%E5%B7%A5%E5%85%B7/"/>
+    <url>/others/%E6%96%87%E7%AB%A0&amp;&amp;%E5%B7%A5%E5%85%B7/</url>
     
     <content type="html"><![CDATA[<p>helloworld</p>]]></content>
     
