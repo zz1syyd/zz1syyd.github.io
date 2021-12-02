@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zz1syyd.com/reverse/BUUCTF/</loc>
+    
+    <lastmod>2021-12-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.zz1syyd.com/reverse/%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91/</loc>
     
     <lastmod>2021-12-02</lastmod>
@@ -30,15 +39,6 @@
   
   <url>
     <loc>https://www.zz1syyd.com/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/</loc>
-    
-    <lastmod>2021-12-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.zz1syyd.com/reverse/BUUCTF/</loc>
     
     <lastmod>2021-12-02</lastmod>
     
@@ -130,14 +130,14 @@
 
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/others/</loc>
+    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
     <lastmod>2021-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
+    <loc>https://www.zz1syyd.com/categories/others/</loc>
     <lastmod>2021-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
