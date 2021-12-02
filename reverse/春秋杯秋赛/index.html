@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://www.zz1syyd.com/img/image-20211202153928192.png">
 <meta property="og:image" content="https://www.zz1syyd.com/img/image-20211202154233012.png">
 <meta property="article:published_time" content="2021-11-28T13:35:47.000Z">
-<meta property="article:modified_time" content="2021-12-02T07:45:30.402Z">
+<meta property="article:modified_time" content="2021-12-02T07:55:43.508Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.zz1syyd.com/img/image-20211202153538062.png">
   
@@ -239,23 +239,23 @@
 <h1 id="Snake"><a href="#Snake" class="headerlink" title="Snake"></a>Snake</h1><p>查壳 发现upx壳</p>
 <p>代码脱壳无果 之后手脱 ida32打开</p>
 <p>shift+f12查找相关字符串</p>
-<p><img src="/img/image-20211202153538062.png" srcset="/img/loading.gif" lazyload alt="image-20211202153538062"></p>
+<p><img src="/img/image-20211202153538062.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>找到base64表和加密数据</p>
 <p>先用base64解码发现没那么简单</p>
 <p>之后查找密文引用处 做一个简单的分析</p>
-<p><img src="/img/image-20211202153726363.png" srcset="/img/loading.gif" lazyload alt="image-20211202153726363"></p>
+<p><img src="/img/image-20211202153726363.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>为什么确定是变码base64</p>
 <p>理由：查找引用 sub_40186F 函数的函数中 找到开头函数 进入查看</p>
 <p>(这里的变码函数是从 main 函数起始开始一步步查找找到的)</p>
-<p><img src="/img/image-20211202153853838.png" srcset="/img/loading.gif" lazyload alt="image-20211202153853838"></p>
+<p><img src="/img/image-20211202153853838.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>函数内部逻辑：</p>
-<p><img src="/img/image-20211202153928192.png" srcset="/img/loading.gif" lazyload alt="image-20211202153928192"></p>
+<p><img src="/img/image-20211202153928192.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>找一个在线C编译或者自己复制代码查看 得出结果</p>
 <blockquote>
 <p><strong>ABCDEFGHIJKLMNOPQRST0123456789+/UVWXYZabcdefghijklmnopqrstuvwxyz</strong></p>
 </blockquote>
 <p>退回查看异或操作具体内容 逻辑比较简单</p>
-<p><img src="/img/image-20211202154233012.png" srcset="/img/loading.gif" lazyload alt="image-20211202154233012"></p>
+<p><img src="/img/image-20211202154233012.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>写出脚本求解</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> base64<br><span class="hljs-keyword">import</span> string<br><br>table = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span>  <span class="hljs-comment">#base64初始加密表</span><br><br>model = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRST0123456789+/UVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span>  <span class="hljs-comment">#魔改之后的表</span><br><br>flag = <span class="hljs-string">&quot;7G5d5bAy+TMdLWlu5CdkMTlcJnwkNUgb2AQL3CcmPpVf6DAp72scOSlb&quot;</span>  <span class="hljs-comment">#密文 要解密的字符串</span><br><br>STR = <span class="hljs-built_in">list</span>(base64.b64decode(flag.translate(<span class="hljs-built_in">str</span>.maketrans(model,table))))  <span class="hljs-comment">#maketrans作用 将model中要替换的字符转换为table对应的字符（同一位置）</span><br>      <span class="hljs-comment">#list作用 将数据转换成列表 即数组</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>,<span class="hljs-number">1</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(STR)):<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">len</span>(STR) % i):<br>            STR[j] ^= (j + i)<br>        <span class="hljs-keyword">else</span>:<br>            STR[j] ^= ((j % i) + j)<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(STR)):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(STR[i]),end=<span class="hljs-string">&#x27;&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
