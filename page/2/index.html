@@ -172,74 +172,6 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
-          <img src="/img/hectf.png" srcset="/img/loading.gif" lazyload alt="河北师范大学">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
-          河北师范大学
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
-          
-          
-            
-          
-          time:2021-11-13 to 2021-11-14
-
-baby_upxupx壳
-正常的脱壳指令为
-
-upx -d baby_upx.exe
-
-发现报错
-
-所以自己手动脱了一下
-出来之后ida32打开
-
-
-看了官方的wp之后发现直接upx指令脱壳是可以的
-
-upx -d baby_upx.exe -o baby_upx_dump.exe
-
-ida32打开 (发现手脱结果都差不多)
-
-写脚本：
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:34" pubdate>
-              2021-11-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/reverse/">reverse</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
           <img src="/img/syb.png" srcset="/img/loading.gif" lazyload alt="深育杯">
         </a>
@@ -490,11 +422,118 @@ shift+f12打开字符串窗口
     </article>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/BUUCTF/" target="_self">
+          <img src="/img/buuctf.png" srcset="/img/loading.gif" lazyload alt="BUUCTF">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/reverse/BUUCTF/" target="_self">
+          BUUCTF
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/reverse/BUUCTF/" target="_self">
+          
+          
+            
+          
+          time:2021-10-14 to now
+
+刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
+有壳脱壳/无壳查看文件类型-使用32/64位ida打开
+shift+F12进入字符串窗口 发现base64加密方式(确定flag部分用到base64解码)
+
+返回main函数 F5查看
+
+跟进查看DialogFunc参数
+String设定长度为8位且下面if语句使用到Strin
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-28 21:30" pubdate>
+              2021-11-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/reverse/">reverse</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/others/%E7%9F%A5%E8%AF%86-%E6%8A%80%E5%B7%A7/" target="_self">
+          知识-技巧
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/others/%E7%9F%A5%E8%AF%86-%E6%8A%80%E5%B7%A7/" target="_self">
+          
+          
+            
+          
+          一些汇总壳压缩壳：对软件进行压缩，使其体积减小；在软件被执行的时候进行解压缩，解压缩后与加壳前程序结构相同
+加密壳：对软件进行保护，使其关键代码不被逆向或者不被破解；在软件被执行后或者执行时进行解密，解密后与加壳前程序结构可能不同
+加密壳保护强度划分：
+PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布局与原来不同
+虚拟指令壳：虚拟机的壳，将软件二进制代码中指令进行模拟，保护强度更高
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-28 21:30" pubdate>
+              2021-11-28
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/others/">others</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </span>
   </nav>
 
