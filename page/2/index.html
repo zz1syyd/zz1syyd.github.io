@@ -172,40 +172,45 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
-          <img src="/img/syb.png" srcset="/img/loading.gif" lazyload alt="深育杯">
+        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
+          <img src="/img/hectf.png" srcset="/img/loading.gif" lazyload alt="河北师范大学">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
-          深育杯
+        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
+          河北师范大学
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
           
           
             
           
-          time:2021-11-13
+          time:2021-11-13 to 2021-11-14
 
-Lithops无壳 32位 ida32打开
+baby_upxupx壳
+正常的脱壳指令为
 
-从输入到 check 有很多函数
-莽一点 从check函数下断点 步入进去看看试试
-输入任意长的flag之后进入 check 函数
+upx -d baby_upx.exe
 
-再直接从 return 处下断点 f9 运行
+发现报错
 
-双击进入 dword_813C60 查看 发现两处引用
-且有一处引用是在我们的 check 函数
-点击追踪过去
+所以自己手动脱了一下
+出来之后ida32打开
 
-之后我们程序运行到此处时
+
+看了官方的wp之后发现直接upx指令脱壳是可以的
+
+upx -d baby_upx.exe -o baby_upx_dump.exe
+
+ida32打开 (发现手脱结果都差不多)
+
+写脚本：
         </a>
       </p>
 
@@ -213,8 +218,8 @@ Lithops无壳 32位 ida32打开
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:34" pubdate>
-              2021-11-28
+            <time datetime="2021-11-15 21:34" pubdate>
+              2021-11-15
             </time>
           </div>
         
@@ -278,8 +283,8 @@ this_is
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:33" pubdate>
-              2021-11-28
+            <time datetime="2021-11-09 21:33" pubdate>
+              2021-11-09
             </time>
           </div>
         
@@ -344,8 +349,8 @@ shift+f12找字符串 没发现
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:33" pubdate>
-              2021-11-28
+            <time datetime="2021-10-10 21:33" pubdate>
+              2021-10-10
             </time>
           </div>
         
@@ -404,66 +409,8 @@ shift+f12打开字符串窗口
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:31" pubdate>
-              2021-11-28
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/reverse/">reverse</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse/BUUCTF/" target="_self">
-          <img src="/img/buuctf.png" srcset="/img/loading.gif" lazyload alt="BUUCTF">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/reverse/BUUCTF/" target="_self">
-          BUUCTF
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/reverse/BUUCTF/" target="_self">
-          
-          
-            
-          
-          time:2021-10-14 to now
-
-刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
-有壳脱壳/无壳查看文件类型-使用32/64位ida打开
-shift+F12进入字符串窗口 发现base64加密方式(确定flag部分用到base64解码)
-
-返回main函数 F5查看
-
-跟进查看DialogFunc参数
-String设定长度为8位且下面if语句使用到Strin
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:30" pubdate>
-              2021-11-28
+            <time datetime="2021-10-01 21:31" pubdate>
+              2021-10-01
             </time>
           </div>
         
@@ -517,8 +464,8 @@ PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布�
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:30" pubdate>
-              2021-11-28
+            <time datetime="2021-09-25 21:30" pubdate>
+              2021-09-25
             </time>
           </div>
         
@@ -527,6 +474,64 @@ PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布�
             <i class="iconfont icon-category"></i>
             
               <a href="/categories/others/">others</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/BUUCTF/" target="_self">
+          <img src="/img/buuctf.png" srcset="/img/loading.gif" lazyload alt="BUUCTF">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/reverse/BUUCTF/" target="_self">
+          BUUCTF
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/reverse/BUUCTF/" target="_self">
+          
+          
+            
+          
+          time:2021-10-14 to now
+
+刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
+有壳脱壳/无壳查看文件类型-使用32/64位ida打开
+shift+F12进入字符串窗口 发现base64加密方式(确定flag部分用到base64解码)
+
+返回main函数 F5查看
+
+跟进查看DialogFunc参数
+String设定长度为8位且下面if语句使用到Strin
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-23 18:39" pubdate>
+              2021-09-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/reverse/">reverse</a>
             
           </div>
         

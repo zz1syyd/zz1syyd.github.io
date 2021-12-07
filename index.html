@@ -203,8 +203,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:30" pubdate>
-              2021-11-28
+            <time datetime="2021-09-23 21:30" pubdate>
+              2021-09-23
             </time>
           </div>
         
@@ -383,8 +383,8 @@ ROR题目流程比较简单
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:34" pubdate>
-              2021-11-28
+            <time datetime="2021-11-24 21:34" pubdate>
+              2021-11-24
             </time>
           </div>
         
@@ -434,8 +434,8 @@ ROR题目流程比较简单
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:34" pubdate>
-              2021-11-28
+            <time datetime="2021-11-17 21:34" pubdate>
+              2021-11-17
             </time>
           </div>
         
@@ -456,45 +456,40 @@ ROR题目流程比较简单
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
-          <img src="/img/hectf.png" srcset="/img/loading.gif" lazyload alt="河北师范大学">
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          <img src="/img/syb.png" srcset="/img/loading.gif" lazyload alt="深育杯">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
-          河北师范大学
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          深育杯
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
           
           
             
           
-          time:2021-11-13 to 2021-11-14
+          time:2021-11-13
 
-baby_upxupx壳
-正常的脱壳指令为
+Lithops无壳 32位 ida32打开
 
-upx -d baby_upx.exe
+从输入到 check 有很多函数
+莽一点 从check函数下断点 步入进去看看试试
+输入任意长的flag之后进入 check 函数
 
-发现报错
+再直接从 return 处下断点 f9 运行
 
-所以自己手动脱了一下
-出来之后ida32打开
+双击进入 dword_813C60 查看 发现两处引用
+且有一处引用是在我们的 check 函数
+点击追踪过去
 
-
-看了官方的wp之后发现直接upx指令脱壳是可以的
-
-upx -d baby_upx.exe -o baby_upx_dump.exe
-
-ida32打开 (发现手脱结果都差不多)
-
-写脚本：
+之后我们程序运行到此处时
         </a>
       </p>
 
@@ -502,8 +497,8 @@ ida32打开 (发现手脱结果都差不多)
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-28 21:34" pubdate>
-              2021-11-28
+            <time datetime="2021-11-16 21:34" pubdate>
+              2021-11-16
             </time>
           </div>
         
