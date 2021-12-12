@@ -246,7 +246,21 @@
           
           time:2021-12-11
 
-Randomwow
+Random32位无壳 ida32打开
+找到 main 函数 反编译查看主要逻辑
+
+
+因为每次循环都给定了 rand() 的种子值
+所以可以动调获得每次异或的值
+这里输入
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+经过循环后 我们输入的值变成
+(其中第一位的值是 0x39 )
+(可以只输入一位数来进行验证)
+
+脚
         </a>
       </p>
 
