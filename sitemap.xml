@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://www.zz1syyd.com/</loc>
-    <lastmod>2021-12-23</lastmod>
+    <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -139,15 +139,15 @@
 
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/others/</loc>
-    <lastmod>2021-12-23</lastmod>
+    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
+    <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
-    <lastmod>2021-12-23</lastmod>
+    <loc>https://www.zz1syyd.com/categories/others/</loc>
+    <lastmod>2022-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
