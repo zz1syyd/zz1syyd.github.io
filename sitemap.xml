@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.zz1syyd.com/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    
+    <lastmod>2022-03-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.zz1syyd.com/about/index.html</loc>
     
     <lastmod>2022-03-05</lastmod>
@@ -130,7 +139,7 @@
 
   <url>
     <loc>https://www.zz1syyd.com/</loc>
-    <lastmod>2022-03-05</lastmod>
+    <lastmod>2022-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -140,14 +149,14 @@
   
   <url>
     <loc>https://www.zz1syyd.com/categories/reverse/</loc>
-    <lastmod>2022-03-05</lastmod>
+    <lastmod>2022-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.zz1syyd.com/categories/others/</loc>
-    <lastmod>2022-03-05</lastmod>
+    <lastmod>2022-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
