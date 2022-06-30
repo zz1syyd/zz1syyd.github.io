@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>test</title>
+    <link href="/test/test/"/>
+    <url>/test/test/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>test</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>408</title>
     <link href="/others/408/"/>
     <url>/others/408/</url>
