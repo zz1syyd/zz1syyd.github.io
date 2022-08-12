@@ -246,16 +246,15 @@ PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布�
           
             
           
-          time:2021-10-14 to now
-
-刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
+          刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
 有壳脱壳/无壳查看文件类型-使用32/64位ida打开
 shift+F12进入字符串窗口 发现base64加密方式(确定flag部分用到base64解码)
 
 返回main函数 F5查看
 
 跟进查看DialogFunc参数
-String设定长度为8位且下面if语句使用到Strin
+String设定长度为8位且下面if语句使用到String
+找到可疑点  v4”ak1w“  和  v5
         </a>
       </p>
 
