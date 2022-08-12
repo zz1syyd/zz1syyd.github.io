@@ -18,16 +18,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="ill-intentions">
+  <meta name="description" content="ill-intentions使用objection解题： jadx打开apk文件 从AndroidManifest.xml中找到包名”com.example.hellojni” 之后手机端打开app 使用 objection -g com.example.hellojni explore 进行注入 android hooking list activities 查看当前可用activities">
 <meta property="og:type" content="article">
 <meta property="og:title" content="攻防世界">
 <meta property="og:url" content="https://www.zz1syyd.com/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/index.html">
 <meta property="og:site_name" content="冬云">
-<meta property="og:description" content="ill-intentions">
+<meta property="og:description" content="ill-intentions使用objection解题： jadx打开apk文件 从AndroidManifest.xml中找到包名”com.example.hellojni” 之后手机端打开app 使用 objection -g com.example.hellojni explore 进行注入 android hooking list activities 查看当前可用activities">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-151940874.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-152444967.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-152838558.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-153116288.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/-153711366.png">
 <meta property="article:published_time" content="2022-08-12T08:06:58.000Z">
-<meta property="article:modified_time" content="2022-08-12T08:14:48.036Z">
+<meta property="article:modified_time" content="2022-08-12T08:30:14.277Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/-151940874.png">
   
   <title>攻防世界 - 冬云</title>
 
@@ -179,7 +185,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      14 字
+      621 字
     </span>
   
 
@@ -188,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      2 分钟
     </span>
   
 
@@ -228,7 +234,27 @@
             <h1 style="display: none">攻防世界</h1>
             
             <div class="markdown-body">
-              <h1 id="ill-intentions"><a href="#ill-intentions" class="headerlink" title="ill-intentions"></a>ill-intentions</h1>
+              <h1 id="ill-intentions"><a href="#ill-intentions" class="headerlink" title="ill-intentions"></a>ill-intentions</h1><p>使用objection解题：</p>
+<p>jadx打开apk文件 从AndroidManifest.xml中找到包名”com.example.hellojni”</p>
+<p>之后手机端打开app 使用 objection -g com.example.hellojni explore 进行注入</p>
+<p>android hooking list activities 查看当前可用activities</p>
+<p><img src="/img/-151940874.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>android intent launch_activity com.example.application.DefinitelyNotThisOne 启动三个activity中的一个类(任意)</p>
+<p>android hooking watch class com.example.application.DefinitelyNotThisOne 来hook此类</p>
+<p><img src="/img/-152444967.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>点击手机端按钮 得到此类调用的方法为definitelyNotThis</p>
+<p><img src="/img/-152838558.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>android hooking watch class_method com.example.application.DefinitelyNotThisOne.definitelyNotThis –dump-return 来hook调用的方法 并且打印返回值</p>
+<p>再次点击手机端按钮 得到提示：Told you so!</p>
+<p><img src="/img/-153116288.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>回到起点 启动剩余两个类中的一个类 使用相同方法 最终在 IsThisTheRealOne类中perhapsThis方法取得flag</p>
+<p><img src="/img/-153711366.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<blockquote>
+<p> <strong>CTF{IDontHaveABadjokeSorry}</strong></p>
+</blockquote>
+<hr>
+
             </div>
             <hr>
             <div>

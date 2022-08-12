@@ -8,7 +8,7 @@
     <link href="/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/"/>
     <url>/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/</url>
     
-    <content type="html"><![CDATA[<h1 id="ill-intentions"><a href="#ill-intentions" class="headerlink" title="ill-intentions"></a>ill-intentions</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="ill-intentions"><a href="#ill-intentions" class="headerlink" title="ill-intentions"></a>ill-intentions</h1><p>使用objection解题：</p><p>jadx打开apk文件 从AndroidManifest.xml中找到包名”com.example.hellojni”</p><p>之后手机端打开app 使用 objection -g com.example.hellojni explore 进行注入</p><p>android hooking list activities 查看当前可用activities</p><p><img src="/img/-151940874.png" alt="img"></p><p>android intent launch_activity com.example.application.DefinitelyNotThisOne 启动三个activity中的一个类(任意)</p><p>android hooking watch class com.example.application.DefinitelyNotThisOne 来hook此类</p><p><img src="/img/-152444967.png" alt="img"></p><p>点击手机端按钮 得到此类调用的方法为definitelyNotThis</p><p><img src="/img/-152838558.png" alt="img"></p><p>android hooking watch class_method com.example.application.DefinitelyNotThisOne.definitelyNotThis –dump-return 来hook调用的方法 并且打印返回值</p><p>再次点击手机端按钮 得到提示：Told you so!</p><p><img src="/img/-153116288.png" alt="img"></p><p>回到起点 启动剩余两个类中的一个类 使用相同方法 最终在 IsThisTheRealOne类中perhapsThis方法取得flag</p><p><img src="/img/-153711366.png" alt="img"></p><hr><blockquote><p> <strong>CTF{IDontHaveABadjokeSorry}</strong></p></blockquote><hr>]]></content>
     
     
     <categories>
