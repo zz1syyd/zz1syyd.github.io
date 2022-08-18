@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://www.zz1syyd.com/img/-163836940387113.png">
 <meta property="og:image" content="https://www.zz1syyd.com/img/-163836940387115.png">
 <meta property="article:published_time" content="2021-11-15T13:34:15.000Z">
-<meta property="article:modified_time" content="2022-08-12T08:00:44.679Z">
+<meta property="article:modified_time" content="2022-08-18T06:26:06.525Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383693664851.png">
   
@@ -245,17 +245,17 @@
 <p><strong>upx -d baby_upx.exe</strong></p>
 </blockquote>
 <p>发现报错</p>
-<p><img src="/img/-16383693664851.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383693664851.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>所以自己手动脱了一下</p>
 <p>出来之后ida32打开</p>
-<p><img src="/img/-16383693664863.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="/img/-16383693664865.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383693664863.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p><img src="/img/-16383693664865.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>看了官方的wp之后发现直接upx指令脱壳是可以的</p>
 <blockquote>
 <p><strong>upx -d baby_upx.exe -o baby_upx_dump.exe</strong></p>
 </blockquote>
 <p>ida32打开 (发现手脱结果都差不多)</p>
-<p><img src="/img/-16383693664877.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383693664877.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>写脚本：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> v7[<span class="hljs-number">5</span>];<br>    v7[<span class="hljs-number">0</span>] = <span class="hljs-number">2099915543</span>;<br>    v7[<span class="hljs-number">1</span>] = <span class="hljs-number">120201498</span>;<br>    v7[<span class="hljs-number">2</span>] = <span class="hljs-number">269490557</span>;<br>    v7[<span class="hljs-number">3</span>] = <span class="hljs-number">67837461</span>;<br>    v7[<span class="hljs-number">4</span>] = <span class="hljs-number">271401</span>;<br><br>    <span class="hljs-keyword">char</span> String[] = <span class="hljs-string">&quot;HECTF&quot;</span>;<br>    <span class="hljs-keyword">char</span>* flag = (<span class="hljs-keyword">char</span>*)v7; <span class="hljs-comment">//此行作用为 将v7转换成char类型并将指针赋给flag</span><br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">19</span>;i++)<br>        flag[i] ^= String[(i ^ (rand() + <span class="hljs-number">10086</span>)) % <span class="hljs-number">5</span>];    <span class="hljs-comment">//使用 C 写exp的原因大概是因为rand()</span><br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>,flag);<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -267,9 +267,9 @@
 </blockquote>
 <hr>
 <h1 id="baby-pp"><a href="#baby-pp" class="headerlink" title="baby_pp"></a>baby_pp</h1><p>查壳 发现是python写的 exe 文件</p>
-<p><img src="/img/-16383694038719.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383694038719.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>具体过程参考</p>
-<p><img src="/img/-163836940387111.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-163836940387111.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>之后找个在线网站pyc反编译</p>
 <p>(发现在线反编译效果不是很好 文件中重要内容丢失)</p>
 <p>(于是自己折腾了半天 搞好了uncompyle6)</p>
@@ -291,7 +291,7 @@
 
 <p>第15行:       ens += s[i::step]</p>
 <p>举个例子来说明其作用</p>
-<p><img src="/img/-163836940387113.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-163836940387113.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>所以解密脚本 先恢复顺序 再进行异或</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> random<br><br>random.seed(<span class="hljs-number">10085</span>)<br><br>ens = <span class="hljs-string">&#x27;742641edefb6770733ab5932325106b3a5fa75222791d09e451161c46f15504402b32737362443d4df7d136145cd970b54116669c230&#x27;</span><br>flag = <span class="hljs-string">&#x27;&#x27;</span><br>t = <span class="hljs-string">&#x27;&#x27;</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>):<br>    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">18</span>):<br>        t += ens[i + j*<span class="hljs-number">6</span>]<br><br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">0</span>,<span class="hljs-number">108</span>,<span class="hljs-number">2</span>):<br>    flag += <span class="hljs-built_in">chr</span>(<span class="hljs-built_in">int</span>(t[x:x+<span class="hljs-number">2</span>],<span class="hljs-number">16</span>) ^ random.randint(<span class="hljs-number">0</span>, <span class="hljs-number">127</span>))<br><br><span class="hljs-built_in">print</span>(flag)<br></code></pre></td></tr></table></figure>
 
@@ -304,7 +304,7 @@
 <p><strong>HECTF{decrypt(80410840840842108808881088408084210842)}</strong></p>
 </blockquote>
 <p>第一次接触云影密码 特点是</p>
-<p><img src="/img/-163836940387115.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-163836940387115.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <blockquote>
 <p><strong><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanchu/p/13492904.html">Crypto入门 （六）幂数加密（云影密码） - 缘初 - 博客园 (cnblogs.com)</a></strong></p>
 </blockquote>

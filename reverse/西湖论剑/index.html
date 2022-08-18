@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://www.zz1syyd.com/img/-163837010538311.png">
 <meta property="og:image" content="https://www.zz1syyd.com/img/-163837010538313.png">
 <meta property="article:published_time" content="2021-11-24T13:34:33.000Z">
-<meta property="article:modified_time" content="2022-08-12T08:01:52.047Z">
+<meta property="article:modified_time" content="2022-08-18T06:27:44.253Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.zz1syyd.com/img/-16383701053821.png">
   
@@ -252,12 +252,12 @@
 </blockquote>
 <hr>
 <h1 id="虚假的粉丝"><a href="#虚假的粉丝" class="headerlink" title="虚假的粉丝"></a>虚假的粉丝</h1><p>给的文件不少</p>
-<p><img src="/img/-16383701053821.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383701053821.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>faded.mp3就是一首歌 没什么其他内容</p>
 <p>f文件夹里面有5000+个.txt文件</p>
 <p>先用ida打开exe文件看看</p>
-<p><img src="/img/-16383701053833.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><img src="/img/-16383701053835.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383701053833.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p><img src="/img/-16383701053835.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>先分析到这里</p>
 <p>我们现在要去f文件夹里面找符合规则的txt文件 并且求出字符串的偏移地址</p>
 <p>给的约束条件是使用正则匹配</p>
@@ -277,7 +277,7 @@
 <blockquote>
 <p><strong><a target="_blank" rel="noopener" href="https://wangchujiang.com/linux-command/c/grep.html">grep 命令，Linux grep 命令详解：强大的文本搜索工具 - Linux 命令搜索引擎 (wangchujiang.com)</a></strong></p>
 </blockquote>
-<p><img src="/img/-16383701053837.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383701053837.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>求得字符串长度后记录</p>
 <blockquote>
 <p><strong>v12 = 4157</strong></p>
@@ -288,13 +288,13 @@
 <p>(这里的字符串其实没影响)</p>
 <p>(当你在4157.txt中找到此字符串的时候 会发现它的长度为43)</p>
 <p>(但是在exe文件填写的时候 40 43 都会跳转到正确的位置)</p>
-<p><img src="/img/-16383701053839.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-16383701053839.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>字符串眼熟 尝试base64解码</p>
 <blockquote>
 <p><strong>S3Cre7_K3y%20%3D%20Al4N_wAlK3R</strong></p>
 </blockquote>
 <p>之后继续分析ida</p>
-<p><img src="/img/-163837010538311.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-163837010538311.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>根据base64解码内容可以得到key为</p>
 <blockquote>
 <p><strong>Al4N_wAlK3R</strong></p>
@@ -304,7 +304,7 @@
 <blockquote>
 <p><strong>cat ASCII-faded\ 5315.txt</strong></p>
 </blockquote>
-<p><img src="/img/-163837010538313.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/img/-163837010538313.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>详情参考</p>
 <blockquote>
 <p><strong><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-cat.html">Linux cat 命令 | 菜鸟教程 (runoob.com)</a></strong></p>
