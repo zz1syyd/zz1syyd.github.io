@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>https://www.zz1syyd.com/reverse/%E9%99%87%E5%8E%9F%E6%88%98%E2%80%98%E7%96%AB%E2%80%99/</loc>
+    
+    <lastmod>2022-08-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.zz1syyd.com/others/408/</loc>
+    
+    <lastmod>2022-08-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.zz1syyd.com/others/%E7%9F%A5%E8%AF%86-%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2022-08-18</lastmod>
@@ -48,15 +66,6 @@
   
   <url>
     <loc>https://www.zz1syyd.com/reverse/%E7%BB%BF%E5%9F%8E%E6%9D%AF/</loc>
-    
-    <lastmod>2022-08-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.zz1syyd.com/reverse/%E9%99%87%E5%8E%9F%E6%88%98%E2%80%98%E7%96%AB%E2%80%99/</loc>
     
     <lastmod>2022-08-18</lastmod>
     
@@ -136,15 +145,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://www.zz1syyd.com/others/408/</loc>
-    
-    <lastmod>2022-04-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://www.zz1syyd.com/</loc>
@@ -157,14 +157,14 @@
 
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/others/</loc>
+    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.zz1syyd.com/categories/reverse/</loc>
+    <loc>https://www.zz1syyd.com/categories/others/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
