@@ -18,25 +18,26 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keywords" content="">
-  <meta name="description" content="Windows 10&#x2F;11     Visual Studio 2019.v16 https:&#x2F;&#x2F;visualstudio.microsoft.com&#x2F;zh-hans&#x2F;vs&#x2F;older-downloads&#x2F;   CMake Latest Release https:&#x2F;&#x2F;cmake.org&#x2F;download&#x2F;   perl Strawberry Perl https:&#x2F;&#x2F;strawberryp">
+  <meta name="description" content="原文：[原创] Fuzz 工具 WinAFL 的使用感受 - 对 FreeImage 图片解析库进行模糊测试 ^_^-二进制漏洞-看雪论坛-安全社区|安全招聘|bbs.pediy.com 　 下载 找到FreeImage.dll 发现是开源且版本非最新   静态分析后(详见原文)使用动态分析 使用 DynamoRIO 的 drcov 覆盖率查询工具扫描 12..\dynamorio\build32">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WinAFL--从入门到入门">
-<meta property="og:url" content="https://www.zz1syyd.com/reverse/WinAFL--%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:title" content="ABC中对开源FreeImage.dll分析">
+<meta property="og:url" content="https://www.zz1syyd.com/reverse/ABC%E4%B8%AD%E5%AF%B9%E5%BC%80%E6%BA%90FreeImage.dll%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="冬云">
-<meta property="og:description" content="Windows 10&#x2F;11     Visual Studio 2019.v16 https:&#x2F;&#x2F;visualstudio.microsoft.com&#x2F;zh-hans&#x2F;vs&#x2F;older-downloads&#x2F;   CMake Latest Release https:&#x2F;&#x2F;cmake.org&#x2F;download&#x2F;   perl Strawberry Perl https:&#x2F;&#x2F;strawberryp">
+<meta property="og:description" content="原文：[原创] Fuzz 工具 WinAFL 的使用感受 - 对 FreeImage 图片解析库进行模糊测试 ^_^-二进制漏洞-看雪论坛-安全社区|安全招聘|bbs.pediy.com 　 下载 找到FreeImage.dll 发现是开源且版本非最新   静态分析后(详见原文)使用动态分析 使用 DynamoRIO 的 drcov 覆盖率查询工具扫描 12..\dynamorio\build32">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220818142949756.png">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220818143020984.png">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220818143109376.png">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220819094434124.png">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220819094955654.png">
-<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220819095408534.png">
-<meta property="article:published_time" content="2022-08-18T06:02:47.000Z">
-<meta property="article:modified_time" content="2022-08-19T02:31:50.811Z">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150614005.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150621216.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150721704.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150735914.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150747442.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150801704.png">
+<meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150811915.png">
+<meta property="article:published_time" content="2022-08-22T07:01:03.000Z">
+<meta property="article:modified_time" content="2022-08-22T07:09:38.044Z">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.zz1syyd.com/img/image-20220818142949756.png">
+<meta name="twitter:image" content="https://www.zz1syyd.com/img/image-20220822150614005.png">
   
-  <title>WinAFL--从入门到入门 - 冬云</title>
+  <title>ABC中对开源FreeImage.dll分析 - 冬云</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -165,7 +166,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="WinAFL--从入门到入门">
+            <span class="h2" id="subtitle" title="ABC中对开源FreeImage.dll分析">
               
             </span>
 
@@ -175,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-08-18 14:02" pubdate>
-        2022年8月18日 下午
+      <time datetime="2022-08-22 15:01" pubdate>
+        2022年8月22日 下午
       </time>
     </span>
   
@@ -186,7 +187,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      800 字
     </span>
   
 
@@ -195,7 +196,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      3 分钟
     </span>
   
 
@@ -232,96 +233,44 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">WinAFL--从入门到入门</h1>
+            <h1 style="display: none">ABC中对开源FreeImage.dll分析</h1>
             
             <div class="markdown-body">
-              <table>
-<thead>
-<tr>
-<th>Windows</th>
-<th>10/11</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Visual Studio</td>
-<td>2019.v16</td>
-<td><a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/">https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/</a></td>
-</tr>
-<tr>
-<td>CMake</td>
-<td>Latest Release</td>
-<td><a target="_blank" rel="noopener" href="https://cmake.org/download/">https://cmake.org/download/</a></td>
-</tr>
-<tr>
-<td>perl</td>
-<td>Strawberry Perl</td>
-<td><a target="_blank" rel="noopener" href="https://strawberryperl.com/">https://strawberryperl.com/</a></td>
-</tr>
-<tr>
-<td>DynamoRIO</td>
-<td>Source Code</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/googleprojectzero/winafl">https://github.com/googleprojectzero/winafl</a></td>
-</tr>
-<tr>
-<td>WinAFL</td>
-<td>Source Code</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/DynamoRIO/dynamorio">https://github.com/DynamoRIO/dynamorio</a></td>
-</tr>
-</tbody></table>
-<h2 id="安装工具及环境"><a href="#安装工具及环境" class="headerlink" title="安装工具及环境"></a>安装工具及环境</h2><p>将cmake添加进path</p>
-<p>VS2019中勾选</p>
-<p><img src="/img/image-20220818142949756.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<p><img src="/img/image-20220818143020984.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<p><img src="/img/image-20220818143109376.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<h2 id="Dynamo-RIO编译"><a href="#Dynamo-RIO编译" class="headerlink" title="Dynamo RIO编译"></a>Dynamo RIO编译</h2><p>在dynamorio中创建build32 build64两个文件 分别对应32位 64位</p>
-<p>build32中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\dynamorio\build32&gt; cmake -G&quot;Visual Studio 16 2019&quot; -A Win32 ..<br>..\dynamorio\build32&gt; cmake --build . --config RelWithDebInfo<br></code></pre></td></tr></table></figure>
+              <p>原文：[<a target="_blank" rel="noopener" href="https://bbs.pediy.com/thread-255162.htm">原创] Fuzz 工具 WinAFL 的使用感受 - 对 FreeImage 图片解析库进行模糊测试 ^_^-二进制漏洞-看雪论坛-安全社区|安全招聘|bbs.pediy.com</a></p>
+<p>　</p>
+<p>下载 找到FreeImage.dll</p>
+<p>发现是开源且版本非最新</p>
+<p><img src="/img/image-20220822150614005.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p><img src="/img/image-20220822150621216.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p>静态分析后(详见原文)使用动态分析</p>
+<p>使用 DynamoRIO 的 drcov 覆盖率查询工具扫描</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">..<span class="hljs-symbol">\d</span>ynamorio<span class="hljs-symbol">\b</span>uild32<span class="hljs-symbol">\b</span>in32&gt; .<span class="hljs-symbol">\d</span>rrun.exe -t drcov -- [需要测试的程序/模块名] [程序/模块传入的参数]<br>..<span class="hljs-symbol">\d</span>ynamorio<span class="hljs-symbol">\b</span>uild32<span class="hljs-symbol">\b</span>in32&gt; .<span class="hljs-symbol">\d</span>rrun.exe -t drcov -- your_dir<span class="hljs-symbol">\A</span>BCkantu<span class="hljs-symbol">\P</span>hotoViewer.exe your_dir<span class="hljs-symbol">\A</span>BCkantu<span class="hljs-symbol">\F</span>reeImage.dll<br></code></pre></td></tr></table></figure>
 
 
 
-<p>build64中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\dynamorio\build64&gt; cmake -G&quot;Visual Studio 16 2019&quot; -A x64 ..<br>..\dynamorio\build64&gt; cmake --build . --config RelWithDebInfo<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="WinAFL编译"><a href="#WinAFL编译" class="headerlink" title="WinAFL编译"></a>WinAFL编译</h2><p>在winafl中创建build32 build64两个文件</p>
-<p>build32中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\winafl\build32&gt; cmake -G&quot;Visual Studio 16 2019&quot; -A Win32 .. -DDynamoRIO_DIR=your_dir\dynamorio\build32\cmake<br>..\winafl\build32&gt; cmake --build . --config Release<br></code></pre></td></tr></table></figure>
-
-
-
-<p>build64中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\winafl\build64&gt; cmake -G&quot;Visual Studio 16 2019&quot; -A x64 .. -DDynamoRIO_DIR=your_dir\dynamorio\build64\cmake<br>..\winafl\build64&gt; cmake --build . --config Release<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>测试文件 test_gdiplus.exe </p>
-<p>目录  ..\winafl\build64\bin\Release</p>
-<p>准备一张图片 放在↑目录中 改为test.bmp</p>
-<p>ida查看此文件的main函数偏移地址为0x10e0</p>
-<p><img src="/img/image-20220819094434124.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<p>在目录中生成log文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\winafl\build64\bin\Release&gt; your_dir\dynamorio\build64\bin64\drrun.exe -c winafl.dll -debug -target_module test_gdiplus.exe -target_offset 0x10e0 -fuzz_iterations 5 -nargs 2 -- test_gdiplus.exe test.bmp<br></code></pre></td></tr></table></figure>
-
-<p><img src="/img/image-20220819094955654.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<p>在此目录中创建in文件夹 将test.bmp拖至in中进行afl-fuzz测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\winafl\build64\bin\Release&gt; .\afl-fuzz.exe -i in -o out -D your_dir\dynamorio\build64\bin64 -t 20000 -- -coverage_module gdiplus.dll -target_module test_gdiplus.exe -target_offset 0x10e0 -fuzz_iterations 20 -nargs 2 -- test_gdiplus.exe &quot;@@&quot;<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs awk">-debug                  <span class="hljs-regexp">//</span>debug模式 会生成log文件<br>-i						 <span class="hljs-regexp">//</span>输入的测试文件用例<br>-o						 <span class="hljs-regexp">//</span>输出结果的目录<br>-D						 <span class="hljs-regexp">//</span>插桩工具Dynamorio命令文件夹<br>-t						 <span class="hljs-regexp">//</span>每一次样本执行的超时时间<br>--     				     <span class="hljs-regexp">//</span>分隔符 此处是插桩参数<br>-coverage_module		 <span class="hljs-regexp">//</span>需要覆盖的模块(可有多个)<br>-tarage_module			 <span class="hljs-regexp">//</span>被测模块<br>-target_offset          <span class="hljs-regexp">//</span>相对于target_module的偏移量 在target_method无法导出时使用<br>-target_method          <span class="hljs-regexp">//</span>被测模块函数地址<br>-fuzz_iterations        <span class="hljs-regexp">//</span>迭代次数<br>-nargs				 	 <span class="hljs-regexp">//</span>函数所需要参数个数<br>--                      <span class="hljs-regexp">//</span>分隔符 此处是被测程序参数<br>@@                      <span class="hljs-regexp">//</span>引用-i中测试用例<br></code></pre></td></tr></table></figure>
-
-
-
-<p><img src="/img/image-20220819095408534.png" srcset="/img/loading.gif" lazyload alt="　"></p>
-<p>各模块详情：<a target="_blank" rel="noopener" href="https://github.com/google/AFL/blob/master/docs/status_screen.txt">AFL/status_screen.txt at master · google/AFL · GitHub</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41988448/article/details/115176224">(26条消息) Fuzz学习笔记（一）—— WinAFL环境搭建与基本使用_lzyddf的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/system/216437.html">模糊测试工具WinAFL使用指南 - FreeBuf网络安全行业门户</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.giantbranch.cn/2020/12/25/winafl%E7%BC%96%E8%AF%91%E4%B8%8E%E6%B5%8B%E8%AF%95/">winafl编译与测试 | giantbranch’s blog</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2ef0026ede57">2021-02-24-模糊测试（WinAFL） - 简书 (jianshu.com)</a></p>
+<p>生成log文件后</p>
+<p>如何使用ida查看代码覆盖率</p>
+<p>1.ida安装Lighthouse插件</p>
+<p>将plugins目录中内容移到ida plugins文件夹中</p>
+<p><img src="/img/image-20220822150721704.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gaasedelen/lighthouse">GitHub - gaasedelen/lighthouse: A Coverage Explorer for Reverse Engineers</a></p>
+<p>2.加载主文件 即PhotoViewer.exe</p>
+<p>3.ida报错</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/gaasedelen/lighthouse/issues/86">Unsupported disassembler issue · Issue #86 · gaasedelen/lighthouse · GitHub</a></p>
+<p>尝试将python版本退回3.7</p>
+<p>成功</p>
+<p>当本机安装有多个pyhton时 切换版本可以</p>
+<p>ida目录下cmd运行idapyswitch.exe</p>
+<p>4.重启ida</p>
+<p>5.File =&gt; Load File =&gt; Code coverage file…</p>
+<p><img src="/img/image-20220822150735914.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p>6.选择log文件</p>
+<p><img src="/img/image-20220822150747442.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p>7.ida报错</p>
+<p><img src="/img/image-20220822150801704.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p>原因：Lighthouse默认使用的drcov文件版本为version 2 但是最新版的DynamoRIO生成的drcov文件的版本为version 3 所以在导入IDA时会提示文件格式错误</p>
+<p><img src="/img/image-20220822150811915.png" srcset="/img/loading.gif" lazyload alt="　"></p>
+<p>解决：</p>
 
             </div>
             <hr>
@@ -343,18 +292,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/reverse/ABC%E4%B8%AD%E5%AF%B9%E5%BC%80%E6%BA%90FreeImage.dll%E5%88%86%E6%9E%90/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ABC中对开源FreeImage.dll分析</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">
-                        <span class="hidden-mobile">攻防世界</span>
+                      <a href="/reverse/WinAFL--%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E9%97%A8/">
+                        <span class="hidden-mobile">WinAFL--从入门到入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
