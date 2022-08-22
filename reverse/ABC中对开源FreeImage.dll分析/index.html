@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150801704.png">
 <meta property="og:image" content="https://www.zz1syyd.com/img/image-20220822150811915.png">
 <meta property="article:published_time" content="2022-08-22T07:01:03.000Z">
-<meta property="article:modified_time" content="2022-08-22T07:09:38.044Z">
+<meta property="article:modified_time" content="2022-08-22T07:13:43.260Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.zz1syyd.com/img/image-20220822150614005.png">
   
@@ -244,24 +244,27 @@
 <p><img src="/img/image-20220822150621216.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>静态分析后(详见原文)使用动态分析</p>
 <p>使用 DynamoRIO 的 drcov 覆盖率查询工具扫描</p>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">..<span class="hljs-symbol">\d</span>ynamorio<span class="hljs-symbol">\b</span>uild32<span class="hljs-symbol">\b</span>in32&gt; .<span class="hljs-symbol">\d</span>rrun.exe -t drcov -- [需要测试的程序/模块名] [程序/模块传入的参数]<br>..<span class="hljs-symbol">\d</span>ynamorio<span class="hljs-symbol">\b</span>uild32<span class="hljs-symbol">\b</span>in32&gt; .<span class="hljs-symbol">\d</span>rrun.exe -t drcov -- your_dir<span class="hljs-symbol">\A</span>BCkantu<span class="hljs-symbol">\P</span>hotoViewer.exe your_dir<span class="hljs-symbol">\A</span>BCkantu<span class="hljs-symbol">\F</span>reeImage.dll<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">..\dynamorio\build32\bin32&gt; .\drrun.exe -t drcov -- [需要测试的程序/模块名] [程序/模块传入的参数]<br>..\dynamorio\build32\bin32&gt; .\drrun.exe -t drcov -- your_dir\ABCkantu\PhotoViewer.exe your_dir\ABCkantu\FreeImage.dll<br></code></pre></td></tr></table></figure>
 
-
-
+<p>　</p>
 <p>生成log文件后</p>
 <p>如何使用ida查看代码覆盖率</p>
 <p>1.ida安装Lighthouse插件</p>
 <p>将plugins目录中内容移到ida plugins文件夹中</p>
 <p><img src="/img/image-20220822150721704.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/gaasedelen/lighthouse">GitHub - gaasedelen/lighthouse: A Coverage Explorer for Reverse Engineers</a></p>
+<p>　</p>
 <p>2.加载主文件 即PhotoViewer.exe</p>
+<p>　</p>
 <p>3.ida报错</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/gaasedelen/lighthouse/issues/86">Unsupported disassembler issue · Issue #86 · gaasedelen/lighthouse · GitHub</a></p>
 <p>尝试将python版本退回3.7</p>
 <p>成功</p>
 <p>当本机安装有多个pyhton时 切换版本可以</p>
 <p>ida目录下cmd运行idapyswitch.exe</p>
+<p>　</p>
 <p>4.重启ida</p>
+<p>　</p>
 <p>5.File =&gt; Load File =&gt; Code coverage file…</p>
 <p><img src="/img/image-20220822150735914.png" srcset="/img/loading.gif" lazyload alt="　"></p>
 <p>6.选择log文件</p>
