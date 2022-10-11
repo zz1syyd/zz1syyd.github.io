@@ -5,25 +5,6 @@
   
   <entry>
     <title>安卓随记</title>
-    <link href="/android/test/"/>
-    <url>/android/test/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Android逆向-随记"><a href="#Android逆向-随记" class="headerlink" title="Android逆向 随记"></a>Android逆向 随记</h1><p>Magisk安装(Genymotion模拟器==&gt;雷神模拟器)</p><p>　</p><p>apk文件结构</p><table><thead><tr><th align="center">文件</th><th align="center">注释</th></tr></thead><tbody><tr><td align="center">assets</td><td align="center">存放apk静态资源文件 如视频 音频 图片等</td></tr><tr><td align="center">lib</td><td align="center">armeabi-v7a基本通用所有安卓设备、arm64-v8a只适用于64位的安卓设备、x86常见于安卓模拟器 其目录下的.so文件是c/c++编译的动态链接库文件</td></tr><tr><td align="center">META-INF</td><td align="center">保存应用的签名信息 签名信息可以验证apk文件的完整性</td></tr><tr><td align="center">res</td><td align="center">存放资源文件 包括图片 字符串等</td></tr><tr><td align="center">AndroidMainfest.xml</td><td align="center">apk的应用清单信息 有应用名 版本 权限 引用的库文件等</td></tr><tr><td align="center">classes.dex</td><td align="center">classes.dex是java源码编译后生成的java字节码文件 apk运行的主要逻辑</td></tr><tr><td align="center">recourses.arsc</td><td align="center">编译后的二进制资源文件 是一个映射表</td></tr></tbody></table><p>　</p><p>　</p><p>mt管理器/np管理器</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>android</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>test</title>
     <link href="/android/%E5%AE%89%E5%8D%93%E9%9A%8F%E8%AE%B0/"/>
     <url>/android/%E5%AE%89%E5%8D%93%E9%9A%8F%E8%AE%B0/</url>
     

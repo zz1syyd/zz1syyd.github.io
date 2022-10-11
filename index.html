@@ -174,71 +174,8 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/android/test/" target="_self">
-          安卓随记
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/android/test/" target="_self">
-          
-          
-            
-          
-          Android逆向 随记Magisk安装(Genymotion模拟器==&gt;雷神模拟器)
-　
-apk文件结构
-
-
-
-文件
-注释
-
-
-
-assets
-存放apk静态资源文件 如视频 音频 图片等
-
-
-lib
-armeabi-v7a基本通用所有安卓设备、arm64-v8a只适用于64位的安卓设备、x86常见于安卓模拟器 其目录下的.so文件是c/c++编译的动态链接库文件
-
-
-META-INF
-保
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-10-11 21:54" pubdate>
-              2022-10-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/android/%E5%AE%89%E5%8D%93%E9%9A%8F%E8%AE%B0/" target="_self">
-          test
+          安卓随记
         </a>
       </h1>
 
@@ -504,6 +441,71 @@ android hooking list activities 查看当前可用activities
             <i class="iconfont icon-category"></i>
             
               <a href="/categories/others/">others</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E7%BE%8E%E5%9B%A2ctf/" target="_self">
+          <img src="/img/meituan.jpg" srcset="/img/loading.gif" lazyload alt="美团ctf">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/reverse/%E7%BE%8E%E5%9B%A2ctf/" target="_self">
+          美团ctf
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/reverse/%E7%BE%8E%E5%9B%A2ctf/" target="_self">
+          
+          
+            
+          
+          ⏳:2021-12-11
+
+Random32位无壳 ida32打开
+找到 main 函数 反编译查看主要逻辑
+
+
+因为每次循环都给定了 rand() 的种子值
+所以可以动调获得每次异或的值
+这里输入
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+经过循环后 我们输入的值变成
+(其中第一位的值是 0x39 )
+(可以只输入一位数来进行验证)
+
+脚本如下
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-12-11 13:30" pubdate>
+              2021-12-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/reverse/">reverse</a>
             
           </div>
         
