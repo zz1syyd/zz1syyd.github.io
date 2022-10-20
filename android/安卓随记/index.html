@@ -26,7 +26,7 @@
 <meta property="og:description" content="Android逆向 随记Magisk安装(Genymotion模拟器&#x3D;&#x3D;&gt;雷神模拟器) 　 　 查找模拟器相关frida-server版本 123&gt; adb shell&gt; su&gt; uname -a  　 　 apk文件结构    文件 注释    assets 存放apk静态资源文件 如视频 音频 图片等   lib armeabi-v7a基本通用所有安卓设备、arm64-">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-11T13:54:46.000Z">
-<meta property="article:modified_time" content="2022-10-12T12:21:44.934Z">
+<meta property="article:modified_time" content="2022-10-20T11:38:34.462Z">
 <meta name="twitter:card" content="summary_large_image">
   
   <title>安卓随记 - 冬云</title>
@@ -179,7 +179,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      519 字
+      818 字
     </span>
   
 
@@ -188,7 +188,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      3 分钟
     </span>
   
 
@@ -285,6 +285,24 @@
 <p>　</p>
 <p>Android数据库 sqlcipher 加密</p>
 <p>使用 DB Browser for SQLcipher打开</p>
+<p>　</p>
+<p>　</p>
+<p>frida 调用栈</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(Java.use(<span class="hljs-string">&quot;android.util.Log&quot;</span>).getStackTraceString(Java.use(<span class="hljs-string">&quot;Java.lang.Throwable&quot;</span>).$new()));<br></code></pre></td></tr></table></figure>
+
+<p>　</p>
+<p>　</p>
+<p>JavaScript生成Java字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Java.use(<span class="hljs-string">&#x27;java.lang.String&#x27;</span>).$new(<span class="hljs-string">&quot;&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>　</p>
+<p>　</p>
+<p>逆向三段：hook invoke rpc</p>
+<p>(参数 调用栈 返回值)</p>
+<p>(方法重载 参数构造 动静态处理)</p>
+<p>(主动调用 忽略内部细节 直接返回结果)</p>
+<p>rpc：远程调用</p>
+<p>frida(rpc)：多主机多手机多端口混连</p>
 
             </div>
             <hr>
