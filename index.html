@@ -191,16 +191,7 @@
           
             
           
-          Android逆向 随记Magisk安装(Genymotion模拟器==&gt;雷神模拟器)
-　
-　
-查找模拟器相关frida-server版本
-123&gt; adb shell&gt; su&gt; uname -a
-
-　
-　
-apk文件结构
-
+          Android逆向 随记apk文件结构
 
 
 文件
@@ -213,7 +204,15 @@ assets
 
 
 lib
-armeabi-v7a基本通用所有安卓设备、arm64-
+armeabi-v7a基本通用所有安卓设备、arm64-v8a只适用于64位的安卓设备、x86常见于安卓模拟器 其目录下的.so文件是c/c++编译的动态链接库文件
+
+
+META-INF
+保存应用的签名信息 签名信息可以验证apk文件的完整性
+
+
+res
+存放资源文
         </a>
       </p>
 
