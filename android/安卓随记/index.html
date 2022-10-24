@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.zz1syyd.com/img/image-20221023163020660.png">
 <meta property="article:published_time" content="2022-10-11T13:54:46.000Z">
-<meta property="article:modified_time" content="2022-10-24T08:05:34.505Z">
+<meta property="article:modified_time" content="2022-10-24T12:58:40.624Z">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.zz1syyd.com/img/image-20221023163020660.png">
   
@@ -181,7 +181,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      13k 字
+      15k 字
     </span>
   
 
@@ -190,7 +190,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      42 分钟
+      48 分钟
     </span>
   
 
@@ -269,6 +269,11 @@
 <p>　</p>
 <h2 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h2><p>查找模拟器相关frida-server版本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash"> adb shell</span><br><span class="hljs-meta">&gt;</span><span class="bash"> su</span><br><span class="hljs-meta">&gt;</span><span class="bash"> uname -a</span><br></code></pre></td></tr></table></figure>
+
+<p>　</p>
+<p>查看app架构(windows下)</p>
+<p>找到相应父进程 zygote/zygote64</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash"> adb shell ps | findstr /c <span class="hljs-string">&quot;hook&quot;</span></span><br>USER           PID  PPID     VSZ    RSS WCHAN            ADDR S NAME<br>u0_a59        5937  1471 1765436 105812 0                   0 S com.example.hooknative<br><span class="hljs-meta"></span><br><span class="hljs-meta">&gt;</span><span class="bash"> adb shell ps | findstr /c <span class="hljs-string">&quot;zygote&quot;</span></span><br>USER           PID  PPID     VSZ    RSS WCHAN            ADDR S NAME<br>root          1469     1 3503096  68020 0                   0 S zygote64<br>root          1471     1 1386184  38300 0                   0 S zygote<br></code></pre></td></tr></table></figure>
 
 <p>　</p>
 <p>.ab文件解压缩==&gt;使用abe.jar</p>
@@ -368,6 +373,21 @@
 
 
 
+<h3 id="native层处理"><a href="#native层处理" class="headerlink" title="native层处理"></a>native层处理</h3><p>inlinehook(arm32)</p>
+<p>需要在 build.gradle 中 android{ defaultConfig{ } } 里添加</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">ndk &#123;abiFilters <span class="hljs-string">&#x27;armeabi-v7a&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>　</p>
+<p>先将 inlinehook 解压包放置 main-&gt;cpp 中</p>
+<p>之后在 main-&gt;cpp-&gt;native-lib.cpp 中写入</p>
+<p>//hook 系统函数 strstr()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;jni.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;dlfcn.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;android/log.h&quot;</span></span><br><br><span class="hljs-keyword">extern</span> <span class="hljs-string">&quot;C&quot;</span> &#123;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;include/inlineHook.h&quot;</span></span><br>&#125;<br><br><br><span class="hljs-built_in"><span class="hljs-keyword">int</span></span> (*old_strstr)(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *, <span class="hljs-keyword">char</span> *) = <span class="hljs-literal">nullptr</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">new_strstr</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* string1, <span class="hljs-keyword">char</span>* string2)</span> </span>&#123;<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(string2, <span class="hljs-string">&quot;yunyun&quot;</span>) == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">old_strstr</span>(string1, string2);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">hook</span><span class="hljs-params">()</span> </span>&#123;<br><br>    <span class="hljs-keyword">void</span> *libc_addr = <span class="hljs-built_in">dlopen</span>(<span class="hljs-string">&quot;libc.so&quot;</span>, RTLD_NOW);<br>    <span class="hljs-keyword">void</span> *strstr_addr = <span class="hljs-built_in">dlsym</span>(libc_addr, <span class="hljs-string">&quot;strstr&quot;</span>);<br>    __android_log_print(<span class="hljs-number">4</span>, <span class="hljs-string">&quot;cppyunaddr&quot;</span>, <span class="hljs-string">&quot;hook is ok==&gt; %p&quot;</span>, strstr_addr);<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">registerInlineHook</span>((<span class="hljs-keyword">uint32_t</span>) strstr_addr, (<span class="hljs-keyword">uint32_t</span>) new_strstr, (<span class="hljs-keyword">uint32_t</span> **) &amp; old_strstr) != ELE7EN_OK) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">inlineHook</span>((<span class="hljs-keyword">uint32_t</span>) strstr_addr) != ELE7EN_OK) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br><span class="hljs-keyword">extern</span> <span class="hljs-string">&quot;C&quot;</span> <span class="hljs-function">JNIEXPORT jstring JNICALL</span><br><span class="hljs-function"><span class="hljs-title">Java_com_example_lsposedso_MainActivity_stringFromJNI</span><span class="hljs-params">(</span></span><br><span class="hljs-params"><span class="hljs-function">        JNIEnv* env,</span></span><br><span class="hljs-params"><span class="hljs-function">        jobject <span class="hljs-comment">/* this */</span>)</span> </span>&#123;<br>    std::string hello = <span class="hljs-string">&quot;Hello from C++&quot;</span>;<br>    <span class="hljs-keyword">return</span> env-&gt;<span class="hljs-built_in">NewStringUTF</span>(hello.<span class="hljs-built_in">c_str</span>());<br>&#125;<br><br><br><span class="hljs-keyword">extern</span> <span class="hljs-string">&quot;C&quot;</span><br><span class="hljs-function">JNIEXPORT <span class="hljs-keyword">void</span> JNICALL</span><br><span class="hljs-function"><span class="hljs-title">Java_com_example_lsposedso_sohook_strstrhook</span><span class="hljs-params">(JNIEnv *env, jobject thiz)</span> </span>&#123;<br>    <span class="hljs-built_in">hook</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>　</p>
+<p>打包成apk文件后解压将 lib.so 文件提取</p>
+<p>push 至 Android 公有目录</p>
+<p>使用 System.load() 写入绝对路径后进行加载</p>
+<p>(系统不会自己加载个人编写的 so 文件 所以需要手动实现)</p>
 
             </div>
             <hr>
