@@ -172,6 +172,71 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          <img src="/img/syb.png" srcset="/img/loading.gif" lazyload alt="深育杯">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          深育杯
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/reverse/%E6%B7%B1%E8%82%B2%E6%9D%AF/" target="_self">
+          
+          
+            
+          
+          ⏳:2021-11-13
+
+Lithops无壳 32位 ida32打开
+
+从输入到 check 有很多函数
+莽一点 从check函数下断点 步入进去看看试试
+输入任意长的flag之后进入 check 函数
+
+再直接从 return 处下断点 f9 运行
+
+双击进入 dword_813C60 查看 发现两处引用
+且有一处引用是在我们的 check 函数
+点击追踪过去
+
+之后我们程序运行到此处时
+
+发
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-16 21:34" pubdate>
+              2021-11-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/reverse/">reverse</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/reverse/%E6%B2%B3%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/" target="_self">
           <img src="/img/hectf.png" srcset="/img/loading.gif" lazyload alt="河北师范大学">
         </a>
@@ -483,68 +548,11 @@ PE加密壳：软件加壳后PE格式布局发生变化，解密后PE格式布�
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/reverse/BUUCTF/" target="_self">
-          <img src="/img/buuctf.png" srcset="/img/loading.gif" lazyload alt="BUUCTF">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/reverse/BUUCTF/" target="_self">
-          BUUCTF
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/reverse/BUUCTF/" target="_self">
-          
-          
-            
-          
-          刮开有奖首先使用Exeinfo PE检查是否有壳并确定是32位还是64位
-有壳脱壳/无壳查看文件类型-使用32/64位ida打开
-shift+F12进入字符串窗口 发现base64加密方式(确定flag部分用到base64解码)
-
-返回main函数 F5查看
-
-跟进查看DialogFunc参数
-String设定长度为8位且下面if语句使用到String
-找到可疑点  v4”ak1w“  和  v5
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-23 18:39" pubdate>
-              2021-09-23
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/reverse/">reverse</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
