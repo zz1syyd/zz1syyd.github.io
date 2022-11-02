@@ -171,6 +171,65 @@
   <div class="row mx-auto index-card">
     
     
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/android/52pj/" target="_self">
+          <img src="/img/gugu.png" srcset="/img/loading.gif" lazyload alt="52pj《安卓逆向这档事》另类破解の另类破解">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/android/52pj/" target="_self">
+          52pj《安卓逆向这档事》另类破解の另类破解
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/android/52pj/" target="_self">
+          
+          
+            
+          
+          观 吾爱破解《安卓逆向这档事》另类破解 | v5le0n9’s garden 有感
+再写一个其他解法
+ChallengeSecond找包名及activity就不再赘述
+
+找到关键比较点
+
+查看isvip()
+一个简单的boolean类型
+
+直接编写frida代码 修改其返回值
+12345678function main()&#123;    Java.perform(function()&#123
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-11-02 14:27" pubdate>
+              2022-11-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/android/">android</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
@@ -186,14 +245,13 @@
             
           
           Fridahttps://v5le0n9.github.io/posts/ab7319a3.html
-　
 杂记查找模拟器相关frida-server版本
 123&gt; adb shell&gt; su&gt; uname -a
 
 　
 查看app架构(windows下)
 找到相应父进程 zygote/zygote64
-12345678&gt; adb shell ps | findstr /c &
+12345678&gt; adb shell ps | findstr /c &qu
         </a>
       </p>
 
@@ -273,7 +331,7 @@ LSposed安装
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/android/%E5%AE%89%E5%8D%93%E9%9A%8F%E8%AE%B0/" target="_self">
-          <img src="/img/android.jpg" srcset="/img/loading.gif" lazyload alt="安卓随记">
+          <img src="/img/android.png" srcset="/img/loading.gif" lazyload alt="安卓随记">
         </a>
       </div>
     
@@ -344,13 +402,13 @@ res
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/reverse/ABC%E4%B8%AD%E5%AF%B9%E5%BC%80%E6%BA%90FreeImage.dll%E5%88%86%E6%9E%90/" target="_self">
+        <a href="/reverse/FreeImage.dllinABC/" target="_self">
           ABC中对开源FreeImage.dll分析
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/reverse/ABC%E4%B8%AD%E5%AF%B9%E5%BC%80%E6%BA%90FreeImage.dll%E5%88%86%E6%9E%90/" target="_self">
+        <a href="/reverse/FreeImage.dllinABC/" target="_self">
           
           
             
@@ -395,13 +453,13 @@ ida静态分析后(详见原文)使用动态分析
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/reverse/WinAFL--%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E9%97%A8/" target="_self">
+        <a href="/reverse/WinAFL/" target="_self">
           WinAFL--从入门到入门
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/reverse/WinAFL--%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E9%97%A8/" target="_self">
+        <a href="/reverse/WinAFL/" target="_self">
           
           
             
@@ -445,60 +503,6 @@ h
             <i class="iconfont icon-category"></i>
             
               <a href="/categories/reverse/">reverse</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" target="_self">
-          <img src="/img/xctf.png" srcset="/img/loading.gif" lazyload alt="攻防世界">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" target="_self">
-          攻防世界
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/android/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/" target="_self">
-          
-          
-            
-          
-          ill-intentions使用objection解题：
-jadx打开apk文件 从AndroidManifest.xml中找到包名”com.example.hellojni”
-之后手机端打开app 使用 objection -g com.example.hellojni explore 进行注入
-android hooking list activities 查看当前可用activities
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-08-12 16:06" pubdate>
-              2022-08-12
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/android/">android</a>
             
           </div>
         
