@@ -25,9 +25,16 @@
 <meta property="og:site_name" content="冬云">
 <meta property="og:description" content="Fridahttps:&#x2F;&#x2F;v5le0n9.github.io&#x2F;posts&#x2F;ab7319a3.html 杂记查找模拟器相关frida-server版本 123&gt; adb shell&gt; su&gt; uname -a  　 查看app架构(windows下) 找到相应父进程 zygote&#x2F;zygote64 12345678&gt; adb shell ps | findstr &#x2F;c &amp;qu">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221103212319189.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221104150142305.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221105180753717.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221105180735467.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221105213449533.png">
+<meta property="og:image" content="c:/Users/86191/blog/source/img/image-20221105220509914.png">
 <meta property="article:published_time" content="2022-11-01T07:43:23.000Z">
-<meta property="article:modified_time" content="2022-11-01T09:01:37.714Z">
+<meta property="article:modified_time" content="2022-11-05T14:05:25.332Z">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="c:/Users/86191/blog/source/img/image-20221103212319189.png">
   
   <title>Frida - 冬云</title>
 
@@ -179,7 +186,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      818 字
+      1.4k 字
     </span>
   
 
@@ -188,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      4 分钟
     </span>
   
 
@@ -258,6 +265,52 @@
 <p>(主动调用 忽略内部细节 直接返回结果)</p>
 <p>rpc：远程调用</p>
 <p>frida(rpc)：多主机多手机多端口混连</p>
+<p>网络组件</p>
+<p>httpURLConnection</p>
+<p>okhttp_interceptor</p>
+<p>objection</p>
+<p>memory list modules</p>
+<p>memory list exports test.so</p>
+<p>frida</p>
+<p>Module.findBaseAdderss(“test.so”)</p>
+<p>Module.findExportByName(“test.so”, “funcname”)</p>
+<p>注意so中env重写 frida 与 so 中 输出方法相同</p>
+<p>Java.vm.getEnv().readCString()</p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221103212319189.png" srcset="/img/loading.gif" lazyload alt="image-20221103212319189"></p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221104150142305.png" srcset="/img/loading.gif" lazyload alt="image-20221104150142305"></p>
+<p>用户代码 native hook</p>
+<p>Process</p>
+<p>Module</p>
+<p>Memory</p>
+<p>Thread 打印调用栈</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;CCCryptoCreate called from\n&quot;</span> + Thread.backtrace(<span class="hljs-built_in">this</span>.context, Backtracer.FUZZY).map(DebugSymbol.fromAddress).join(<span class="hljs-string">&#x27;\n&#x27;</span>) + <span class="hljs-string">&#x27;\n&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4 id="JNI框架hook"><a href="#JNI框架hook" class="headerlink" title="JNI框架hook"></a>JNI框架hook</h4><p>JNI函数符号hook</p>
+<p>JNI函数参数 返回值打印 替换</p>
+<p>动态注册JNI_Onload</p>
+<p>hook RegisterNatives</p>
+<p>jnitrace</p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221105180753717.png" srcset="/img/loading.gif" lazyload alt="image-20221105180753717"></p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221105180735467.png" srcset="/img/loading.gif" lazyload alt="image-20221105180735467"></p>
+<h4 id="libc框架hook"><a href="#libc框架hook" class="headerlink" title="libc框架hook"></a>libc框架hook</h4><p>libc函数符号hook</p>
+<p>libc函数参数 返回值打印 替换</p>
+<p>主动调用libc读写文件</p>
+<p>hook linker dlopen</p>
+<p>frida-trace</p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221105213449533.png" srcset="/img/loading.gif" lazyload alt="image-20221105213449533"></p>
+<p><img src="C:\Users\86191\blog\source\img\image-20221105220509914.png" srcset="/img/loading.gif" lazyload alt="image-20221105220509914"></p>
 
             </div>
             <hr>
